@@ -16,7 +16,7 @@
       --radius:18px;
     }
     *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:16px}
+    html{scroll-behavior:smooth;scroll-padding-top:24px}
     body{margin:0;background:var(--page);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.58;-webkit-font-smoothing:antialiased}
     button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
     button:focus-visible,a:focus-visible{outline:3px solid #41aaf7;outline-offset:3px}
@@ -80,7 +80,7 @@
     .rubric{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
     .measure{min-width:0}.measure strong{display:block;color:var(--navy);font-size:23px;line-height:1.15;font-weight:840}.measure span{font-size:13px;color:var(--muted)}
     .meter{height:5px;margin-top:12px;border-radius:6px;background:#e7eef5}.meter div{height:100%;background:linear-gradient(90deg,#2376c9,#31adc3);border-radius:6px;width:var(--width)}
-    .deliver{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.deliver .step{padding:22px}.deliver ul{margin:7px 0 0;padding-left:18px}.deliver li{font-size:14px;color:var(--muted);line-height:1.75}.deliver p{font-size:14px}
+    .deliver{display:grid;grid-template-columns:1fr 1fr;gap:14px}.deliver .step{padding:22px}.deliver ul{margin:7px 0 0;padding-left:18px}.deliver li{font-size:14px;color:var(--muted);line-height:1.75}.deliver p{font-size:14px}
     footer{background:#102d4b;color:#e5f0f9}.footer-inner{padding:21px 0;display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;font-size:13px}
     .footer-inner strong{color:#fff}
     @media(max-width:1020px){.workspace{grid-template-columns:minmax(0,1fr)}.viewer-shell{height:clamp(370px,60vw,560px)}.model-panel .model-contents{padding:22px}.part-desc{min-height:0}.part-list{grid-template-columns:repeat(5,minmax(0,1fr))}.part-btn{flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;min-height:68px}.part-btn:first-child{grid-column:auto}.part-btn:first-child:before{display:none}.rubric{grid-template-columns:repeat(4,minmax(0,1fr))}}
@@ -112,7 +112,7 @@
         <div class="card" aria-label="Viewer 3D interaktif">
           <div class="card-head"><strong>Tampilan 3D</strong><span class="subtle" id="viewer-name">Wheel Assembly</span></div>
           <div class="viewer-shell" id="viewer-shell">
-            <model-viewer id="viewer" src="WHEEL%20ASSEMBLY.glb" alt="Rakitan Wheel Assembly" camera-controls touch-action="pan-y" camera-orbit="322deg 72deg auto" field-of-view="24deg" interaction-prompt="auto" loading="eager" environment-image="neutral" exposure="0.86" shadow-intensity="0.85" shadow-softness="0.78" tone-mapping="neutral"></model-viewer>
+            <model-viewer id="viewer" src="WHEEL%20ASSEMBLY.glb" alt="Rakitan Wheel Assembly" camera-controls touch-action="pan-y" camera-orbit="314deg 72deg 118%" camera-target="auto auto auto" field-of-view="23deg" interaction-prompt="auto" loading="eager" environment-image="neutral" exposure="0.86" shadow-intensity="0.85" shadow-softness="0.78" tone-mapping="neutral"></model-viewer>
             <div class="loading" id="loading" role="status" aria-live="polite">Memuat rakitan...</div>
           </div>
           <div class="view-toolbar" role="group" aria-label="Pengaturan viewer">
@@ -164,9 +164,16 @@
         <div class="measure"><strong>15%</strong><span>Kerapian</span><div class="meter"><div style="--width:75%"></div></div></div>
       </div>
     </section>
-    <section id="pengumpulan" class="deliver" aria-label="Hasil akhir">
-      <div class="step"><h3>Hasil akhir</h3><ul><li>Gambar detail setiap komponen dan gambar rakitan.</li><li>Pandangan ortogonal dan potongan yang relevan.</li><li>Ukuran, toleransi, kekasaran permukaan, dan etiket.</li></ul></div>
-      <div class="step"><h3>Berkas pengumpulan</h3><ul><li>File gambar kerja yang dapat diedit.</li><li>PDF gambar teknik ukuran A3.</li><li>Pengumpulan mengikuti petunjuk pengampu.</li></ul></div>
+    <section class="lower" id="pengumpulan" aria-labelledby="deliver-title">
+      <div class="section-top">
+        <p class="eyebrow">04 · Hasil dan Pengumpulan</p>
+        <h2 id="deliver-title">Hasil dan Pengumpulan</h2>
+        <p>Siapkan gambar kerja akhir dan berkas yang harus dikumpulkan sesuai ketentuan PBL.</p>
+      </div>
+      <div class="deliver">
+        <div class="step"><h3>Hasil akhir</h3><ul><li>Gambar detail setiap komponen dan gambar rakitan.</li><li>Pandangan ortogonal dan potongan yang relevan.</li><li>Ukuran, toleransi, kekasaran permukaan, dan etiket.</li></ul></div>
+        <div class="step"><h3>Berkas pengumpulan</h3><ul><li>File gambar kerja CAD dalam format DWG (.dwg).</li><li>PDF gambar teknik ukuran A3.</li><li>Pengumpulan mengikuti petunjuk pengampu.</li></ul></div>
+      </div>
     </section>
   </main>
   <footer><div class="container footer-inner"><span><strong>Gambar Mesin</strong> · Sarjana Terapan Teknik Mesin · Fakultas Vokasi UNY</span><span>Project Based Learning.</span></div></footer>
@@ -183,11 +190,11 @@
       else {logo.style.display='none';document.getElementById('uny-fallback').style.display='inline'}
     });
     const DATA={
-      assembly:{title:'Wheel Assembly',file:'WHEEL ASSEMBLY.glb',desc:'Rakitan lengkap yang terdiri dari Base Plate, Bracket, Wheel, dan Axle. Perhatikan posisi, hubungan, dan arah pemasangan tiap komponen.',rows:[['Jenis tampilan','Rakitan lengkap'],['Komponen','Base Plate · Bracket · Wheel · Axle']],view:{orbit:'322deg 72deg auto',target:'0m 0m 0m',fov:'24deg'}},
-      base:{title:'Base Plate',file:'BASE PLATE.glb',desc:'Pelat dasar dengan lubang pengikat dan undakan untuk dudukan bracket.',rows:[['Bahan','Cast iron (C.I.)'],['Panjang × lebar','136 × 78 mm'],['Lubang','4 × Ø10 mm']],view:{orbit:'35deg 68deg auto',target:'0m 0m 0m',fov:'24deg'}},
-      bracket:{title:'Bracket',file:'BRACKET.glb',desc:'Penopang roda dengan lubang poros dan bagian penguat. Amati bentuk rib dan lubang pemasangannya.',rows:[['Bahan','Cast iron (C.I.)'],['Lubang poros','Ø20 mm'],['Lubang pemasangan','2 × Ø10 mm']],view:{orbit:'28deg 64deg auto',target:'0m 0m 0m',fov:'22deg'}},
-      wheel:{title:'Wheel',file:'WHEEL.glb',desc:'Roda terdiri atas rim, web, hub, dan lubang poros. Bagian dalamnya dapat diamati dengan memutar model.',rows:[['Bahan','Cast iron (C.I.)'],['Diameter luar','Ø100 mm'],['Diameter hub','Ø35 mm'],['Lubang poros','Ø24 mm']],view:{orbit:'36deg 66deg auto',target:'0m 0m 0m',fov:'24deg'}},
-      axle:{title:'Axle',file:'AXLE.glb',desc:'Poros bertingkat yang menghubungkan roda dan penopang. Perhatikan diameter dan panjang poros.',rows:[['Bahan','SAE 1112'],['Diameter','Ø24 / Ø20 mm'],['Panjang total','78 mm']],view:{orbit:'52deg 72deg auto',target:'0m 0m 0m',fov:'18deg'}}
+      assembly:{title:'Wheel Assembly',file:'WHEEL ASSEMBLY.glb',desc:'Rakitan lengkap yang terdiri dari Base Plate, Bracket, Wheel, dan Axle. Perhatikan posisi, hubungan, dan arah pemasangan tiap komponen.',rows:[['Jenis tampilan','Rakitan lengkap'],['Komponen','Base Plate · Bracket · Wheel · Axle']],view:{orbit:'314deg 72deg 118%',target:'auto auto auto',fov:'23deg'}},
+      base:{title:'Base Plate',file:'BASE PLATE.glb',desc:'Pelat dasar dengan lubang pengikat dan undakan untuk dudukan bracket.',rows:[['Bahan','Cast iron (C.I.)'],['Panjang × lebar','136 × 78 mm'],['Lubang','4 × Ø10 mm']],view:{orbit:'328deg 70deg 112%',target:'auto auto auto',fov:'20deg'}},
+      bracket:{title:'Bracket',file:'BRACKET.glb',desc:'Penopang roda dengan lubang poros dan bagian penguat. Amati bentuk rib dan lubang pemasangannya.',rows:[['Bahan','Cast iron (C.I.)'],['Lubang poros','Ø20 mm'],['Lubang pemasangan','2 × Ø10 mm']],view:{orbit:'332deg 68deg 118%',target:'auto auto auto',fov:'20deg'}},
+      wheel:{title:'Wheel',file:'WHEEL.glb',desc:'Roda terdiri atas rim, web, hub, dan lubang poros. Bagian dalamnya dapat diamati dengan memutar model.',rows:[['Bahan','Cast iron (C.I.)'],['Diameter luar','Ø100 mm'],['Diameter hub','Ø35 mm'],['Lubang poros','Ø24 mm']],view:{orbit:'320deg 68deg 120%',target:'auto auto auto',fov:'19deg'}},
+      axle:{title:'Axle',file:'AXLE.glb',desc:'Poros bertingkat yang menghubungkan roda dan penopang. Perhatikan diameter dan panjang poros.',rows:[['Bahan','SAE 1112'],['Diameter','Ø24 / Ø20 mm'],['Panjang total','78 mm']],view:{orbit:'312deg 72deg 124%',target:'auto auto auto',fov:'14deg'}}
     };
     const v=document.getElementById('viewer');
     const status=document.getElementById('loading');
@@ -216,11 +223,11 @@
       materialStyle();
     }
     function applyView(item){
-      const view=item.view||{orbit:'38deg 66deg auto',target:'0m 0m 0m',fov:'28deg'};
-      v.cameraOrbit=view.orbit;
-      v.cameraTarget=view.target||'0m 0m 0m';
-      v.fieldOfView=view.fov||'28deg';
-      v.jumpCameraToGoal?.();
+      const view=item.view||{orbit:'314deg 72deg 118%',target:'auto auto auto',fov:'23deg'};
+      v.setAttribute('camera-orbit',view.orbit);
+      v.setAttribute('camera-target',view.target||'auto auto auto');
+      v.setAttribute('field-of-view',view.fov||'23deg');
+      requestAnimationFrame(()=>v.jumpCameraToGoal?.());
     }
     function selectPart(key){
       if(!DATA[key])return;
@@ -240,7 +247,7 @@
     rotate.addEventListener('click',()=>{const activeNow=!v.hasAttribute('auto-rotate');v.toggleAttribute('auto-rotate',activeNow);rotate.setAttribute('aria-pressed',String(activeNow));rotate.textContent=activeNow?'Hentikan putaran':'Putar otomatis'});
     document.getElementById('reset').addEventListener('click',()=>{applyView(DATA[active])});
     document.getElementById('fullscreen').addEventListener('click',async()=>{const panel=document.getElementById('viewer-shell');try{if(document.fullscreenElement)await document.exitFullscreen();else await panel.requestFullscreen()}catch(e){showStatus('Layar penuh tidak tersedia dalam mode sematan.',true)}});
-    v.addEventListener('load',()=>{materialStyle();status.classList.add('hidden')});
+    v.addEventListener('load',()=>{materialStyle();applyView(DATA[active]);status.classList.add('hidden')});
     v.addEventListener('error',()=>showStatus('Model belum dapat dimuat. Pastikan lima berkas GLB ada bersama index.html di GitHub.',true));
     v.addEventListener('progress',e=>{if(e.detail?.totalProgress<1)showStatus('Memuat '+DATA[active].title+'...')});
     applyView(DATA[active]);
