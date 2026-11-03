@@ -1,40 +1,405 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#102944">
-  <meta name="description" content="Project Based Learning Gambar Mesin: pengamatan dan pengukuran model CAD STEP, tahapan pengerjaan, rubrik penilaian, dan pengumpulan gambar kerja AutoCAD 2D.">
-  <title>Wheel Assembly | PBL Gambar Mesin</title>
-  <style>:root{--ink:#102944;--navy:#12365b;--blue:#1769bf;--cyan:#69dfe8;--surface:#f3f7fb;--muted:#637b91;--line:#dce6f0;--white:#fff;--radius:18px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--surface);color:var(--ink);-webkit-font-smoothing:antialiased;margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline-offset:3px;outline:3px solid #66c9e9}.shell{width:min(1360px,100% - 52px);margin:0 auto}.sitebar{border-bottom:1px solid var(--line);background:#fff}.sitebar .shell{justify-content:space-between;align-items:center;gap:22px;min-height:72px;display:flex}.brand{align-items:center;gap:12px;min-width:0;display:flex}.brandmark{color:#1370c4;background:#e4f2ff;border-radius:12px;place-items:center;width:42px;height:42px;font-size:24px;font-weight:900;display:grid}.brand strong{font-size:14px;line-height:1.3;display:block}.brand small{color:#6d859c;letter-spacing:.05em;margin-top:2px;font-size:10px;font-weight:750;display:block}.sitebar nav{flex-wrap:wrap;align-items:center;gap:26px;display:flex}.sitebar nav a{color:#526e87;font-size:15px;font-weight:800}.sitebar nav a:hover{color:var(--blue)}.hero{color:#fff;background:linear-gradient(112deg,#102944 4%,#153d69 64%,#12608c);position:relative;overflow:hidden}.hero:before{content:"";border:1px solid #ffffff20;border-radius:50%;width:410px;height:410px;position:absolute;top:-170px;right:-65px;box-shadow:0 0 0 58px #ffffff07,0 0 0 134px #ffffff05}.hero .shell{grid-template-columns:1.55fr .68fr;align-items:center;gap:48px;padding:56px 0 59px;display:grid;position:relative}.kicker{color:#a6eaff;text-transform:uppercase;letter-spacing:.17em;margin:0 0 12px;font-size:10px;font-weight:850}.hero h1{letter-spacing:-.038em;margin:0 0 17px;font-size:clamp(31px,4vw,52px);font-weight:860;line-height:1.12}.hero h1 span{color:#75e3eb}.hero p{color:#d6e7f5;max-width:650px;margin:0 0 23px;font-size:14px}.hero-actions{flex-wrap:wrap;gap:10px;display:flex}.btn{cursor:pointer;border:1px solid #0000;border-radius:10px;justify-content:center;align-items:center;gap:8px;min-height:42px;padding:11px 16px;font-size:12px;font-weight:800;transition:background .15s,transform .15s;display:inline-flex}.btn:hover{transform:translateY(-1px)}.btn-solid{color:#fff;background:#1a74d0}.btn-solid:hover{background:#1164b5}.btn-outline{color:#fff;background:#ffffff10;border-color:#ffffff45}.btn-outline:hover{background:#ffffff1e}.btn-soft{color:#145e9f;background:#e6f2fc;border:1px solid #c9e0f4}.btn-soft:hover{background:#d7eafa}.facts{grid-template-columns:1fr 1fr;gap:12px;display:grid}.fact{background:#ffffff13;border:1px solid #ffffff25;border-radius:14px;padding:17px}.fact strong{font-size:25px;line-height:1.1;display:block}.fact span{color:#c3d8e9;margin-top:7px;font-size:10.5px;display:block}main{padding:43px 0 58px}.section{margin-top:47px;scroll-margin-top:18px}.section:first-child{margin-top:0}.overline{color:#1477bd;letter-spacing:.17em;text-transform:uppercase;margin:0 0 6px;font-size:10px;font-weight:900}.section-title{letter-spacing:-.035em;margin:0 0 9px;font-size:clamp(24px,2.6vw,31px);line-height:1.25}.subline{color:var(--muted);max-width:920px;margin:0 0 21px;font-size:13px}.howto{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:15px;display:grid}.howto article{border:1px solid var(--line);background:#fff;border-radius:13px;padding:17px 19px}.howto h3{color:#123a60;margin:0 0 6px;font-size:13px}.howto p{color:#5d788f;margin:0;font-size:11.5px;line-height:1.72}.step-index{color:#1769bc;background:#eaf3fc;border-radius:7px;justify-content:center;align-items:center;width:26px;height:26px;margin-bottom:8px;font-size:10px;font-weight:900;display:inline-flex}.timeline{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;display:grid}.timeline .card{border:1px solid var(--line);background:#fff;border-radius:15px;padding:19px;box-shadow:0 7px 26px #10294409}.timelabel{color:#096eb8;letter-spacing:.08em;text-transform:uppercase;font-size:10px;font-weight:900}.timeline h3{margin:10px 0 8px;font-size:16px;line-height:1.35}.timeline p{color:#60758b;margin:0;font-size:12px;line-height:1.75}.weight{color:#1767b2;background:#e9f5ff;border-radius:7px;margin-top:14px;padding:4px 8px;font-size:10px;font-weight:800;display:inline-block}.notice{color:#285172;background:#eaf3ff;border:1px solid #d5e5f7;border-radius:12px;align-items:flex-start;gap:12px;margin-top:14px;padding:14px 17px;font-size:12px;display:flex}.notice strong{color:#103c70}.notice-icon{font-size:20px;line-height:1.4}.rubric{border:1px solid var(--line);background:#fff;border-radius:18px;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding:22px;display:grid}.rubric-item{min-width:0}.rubric-item strong{color:#123e67;font-size:23px}.rubric-item span{color:#637a90;margin:1px 0 9px;font-size:11px;display:block}.bar{background:#e6edf4;border-radius:99px;height:6px;overflow:hidden}.bar i{background:linear-gradient(90deg,#2475d6,#2aa5b2);border-radius:99px;height:100%;display:block}.rubric-foot{color:#60758b;margin:12px 0 0;font-size:11.5px}.delivery{grid-template-columns:1fr 1fr;gap:14px;display:grid}.delivery .card{border:1px solid var(--line);background:#fff;border-radius:15px;padding:22px}.delivery h3{margin:0 0 10px;font-size:15px}.delivery p,.delivery li{color:#546f85;font-size:12px;line-height:1.86}.delivery p{margin:0}.delivery ul{margin:0;padding-left:20px}.page-footer{color:#cbddec;background:#102944;padding:20px 0;font-size:11px}.page-footer .shell{flex-wrap:wrap;justify-content:space-between;gap:16px;display:flex}.page-footer strong{color:#fff}@media (width<=940px){.hero .shell{grid-template-columns:1fr;gap:22px;padding:46px 0}.facts{grid-template-columns:repeat(4,1fr)}}@media (width<=700px){.shell{width:calc(100% - 28px)}.sitebar .shell{min-height:65px}.sitebar nav{gap:10px}.sitebar nav a{font-size:10px}.brandmark{width:36px;height:36px}.brand small{font-size:9px}.hero .shell{padding:36px 0 40px}.facts{grid-template-columns:1fr 1fr}.fact{padding:12px}.fact strong{font-size:22px}main{padding:30px 0 43px}.section{margin-top:36px}.howto,.timeline,.delivery{grid-template-columns:1fr}.rubric{grid-template-columns:1fr 1fr;gap:17px}}.sitebar .shell{gap:32px;min-height:82px}.brand{flex-shrink:0;gap:14px}.brandmark{border-radius:14px;flex:0 0 52px;width:52px;height:52px;padding:7px;overflow:hidden}.brandmark img{object-fit:contain;width:100%;height:100%;display:block}.brandmark.logo-fallback:before{content:"UNY";font-size:13px;font-weight:900}.brand strong{letter-spacing:-.02em;font-size:20px;font-weight:800;line-height:1.22}.sitebar nav{flex-wrap:nowrap;gap:26px;margin-left:auto}.sitebar nav a{white-space:nowrap;color:#4c6781;padding:12px 1px;font-size:15px;font-weight:700;transition:color .15s;position:relative}.sitebar nav a:after{content:"";background:var(--blue);transform-origin:0;border-radius:2px;height:2px;transition:transform .15s;position:absolute;bottom:6px;left:0;right:0;transform:scaleX(0)}.sitebar nav a:hover:after,.sitebar nav a:focus-visible:after{transform:scaleX(1)}@media (width<=960px){.sitebar .shell{gap:20px;min-height:76px}.brand strong{font-size:18px}.brand small{font-size:11px}.brandmark{flex-basis:46px;width:46px;height:46px}.sitebar nav{gap:17px}.sitebar nav a{font-size:14px}}@media (width<=700px){.sitebar .shell{flex-direction:column;align-items:stretch;gap:9px;min-height:0;padding:13px 0 8px;display:flex}.brand{gap:11px}.brandmark{flex-basis:43px;width:43px;height:43px;padding:6px}.brand strong{font-size:18px}.brand small{margin-top:2px;font-size:11px}.sitebar nav{overscroll-behavior-x:contain;scrollbar-width:thin;flex-wrap:nowrap;gap:20px;width:100%;margin-left:0;padding-bottom:2px;overflow-x:auto}.sitebar nav a{padding:8px 0;font-size:13px}.sitebar nav a:after{bottom:3px}}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}.hero .fact span{color:#e6f1fb;margin-top:9px;font-size:14.5px;font-weight:550;line-height:1.5}@media (width<=700px){.hero .fact span{font-size:13px}}.brand strong{font-size:22px;line-height:1.23}.brand small{font-size:13px;line-height:1.45}.sitebar nav a{font-size:17px;font-weight:750}.kicker{letter-spacing:.13em;font-size:13px}.subline{max-width:1020px;font-size:15px;line-height:1.75}.hero p{font-size:15px;line-height:1.8}.hero-actions .btn{font-size:13px}.howto h3{font-size:15px}.howto p{font-size:13.5px}.timelabel{font-size:12px}.timeline h3{font-size:17px}.timeline p{font-size:14px}.weight{font-size:12px}.notice,.rubric-item span,.rubric-foot{font-size:13px}.delivery h3{font-size:17px}.delivery p,.delivery li{font-size:14px}.page-footer{font-size:13px;line-height:1.65}@media (width<=1020px){.sitebar .shell{flex-wrap:wrap;row-gap:0;padding-top:10px;padding-bottom:8px}.sitebar nav{gap:20px}.sitebar nav a{font-size:15px}.brand strong{font-size:20px}.brand small{font-size:12px}.overline{font-size:13px}}@media (width<=700px){.sitebar .shell{flex-direction:column;align-items:stretch;gap:9px;display:flex}.sitebar nav{flex-wrap:nowrap;gap:20px;width:100%;overflow-x:auto}.sitebar nav a{font-size:14px}.brand strong{font-size:19px}.brand small{font-size:11px}.overline{letter-spacing:.09em;font-size:12px}.kicker{font-size:12px}.subline,.hero p{font-size:14px}.page-footer{font-size:12px}}.brand strong{font-size:22px;font-weight:800}.brand small{letter-spacing:.005em;margin-top:4px;font-size:16px;font-weight:600;line-height:1.42}.sitebar nav{gap:28px}.sitebar nav a{font-size:18px;font-weight:750;line-height:1.35}.overline{letter-spacing:.105em;margin-bottom:9px;font-size:16px;font-weight:850;line-height:1.45}.section-title{letter-spacing:-.027em;margin-bottom:11px;font-size:clamp(25px,2.05vw,30px);font-weight:800;line-height:1.27}.rubric-foot{color:#375b78;background:#eaf2f9;border-left:3px solid #1970bb;border-radius:0 9px 9px 0;align-items:flex-start;gap:9px;width:fit-content;max-width:100%;margin:17px 0 0;padding:11px 15px;font-size:15px;font-weight:600;line-height:1.6;display:flex}.rubric-foot:before{content:"ⓘ";color:#1769bf;flex:none;font-size:16px}@media (width<=1100px){.sitebar .shell{flex-wrap:wrap;gap:8px 20px;padding-top:10px;padding-bottom:9px}.sitebar nav{gap:20px;margin-left:auto}.sitebar nav a{font-size:16px}.brand small{font-size:14px}}@media (width<=700px){.sitebar .shell{flex-direction:column;align-items:stretch;gap:8px;display:flex}.sitebar nav{flex-wrap:nowrap;gap:20px;width:100%;margin-left:0;overflow-x:auto}.sitebar nav a{flex:none;font-size:14px}.brand small{font-size:12px}.brand strong{font-size:19px}.overline{letter-spacing:.09em;font-size:14px}.section-title{font-size:clamp(23px,5.5vw,28px)}.rubric-foot{padding:10px 12px;font-size:13px}}.sitebar .shell{min-height:88px}.brand{gap:14px}.brandmark{border-radius:14px;flex:0 0 58px;place-items:center;width:58px;height:58px;padding:0;display:grid;overflow:hidden}.brandmark img{object-fit:contain;transform-origin:50%;width:100%;height:100%;padding:0;display:block;transform:scale(1.04)}@media (width<=1100px){.sitebar .shell{min-height:82px}.brandmark{flex-basis:52px;width:52px;height:52px}}@media (width<=700px){.sitebar .shell{min-height:0}.brandmark{border-radius:12px;flex-basis:46px;width:46px;height:46px}.brandmark img{transform:none}.brand{gap:11px}}</style>
-  <script type="module" crossorigin src="./assets/index-B_rkq3Rl.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BCOCsRFH.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b2b4c">
+<title>Wheel Assembly | PBL Gambar Mesin</title>
+<meta name="description" content="Project Based Learning Gambar Mesin: pengamatan dan pengukuran model CAD STEP, tahapan pengerjaan, rubrik penilaian, dan pengumpulan gambar kerja AutoCAD 2D.">
+<link rel="canonical" href="https://a-fikrie.github.io/gambar-mesin/">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+<!-- Preview saat link dibagikan (WhatsApp, Telegram, dll.) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+<meta property="og:site_name" content="Gambar Mesin · UNY">
+<meta property="og:title" content="Wheel Assembly | PBL Gambar Mesin">
+<meta property="og:description" content="Amati dan ukur model 3D, ikuti tahapan PBL, pahami rubrik, lalu kumpulkan gambar kerja AutoCAD 2D.">
+<meta property="og:url" content="https://a-fikrie.github.io/gambar-mesin/">
+<meta property="og:image" content="https://a-fikrie.github.io/gambar-mesin/Logo%20UNY.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap">
+
+<style>
+/* =========================================================
+   1. Token
+   ========================================================= */
+:root{
+  --navy-900:#071f38;
+  --navy-800:#0b2b4c;
+  --blue:#1a6fc4;
+  --cyan:#7fe0ee;
+  --gold:#f4b942;
+  --ink:#0c2a47;
+  --muted:#54708a;
+  --paper:#f3f6fa;
+  --line:#d3deea;
+  --c1:#9ec9ee;   /* Tahap 1 */
+  --c2:#4a93d6;   /* Tahap 2 */
+  --c3:#1a6fc4;   /* Tahap 3 */
+  --font-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --font-body:"Barlow","Segoe UI",Arial,sans-serif;
+}
+
+/* =========================================================
+   2. Dasar
+   ========================================================= */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--font-body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.hero :focus-visible{outline-color:var(--cyan)}
+.shell{width:min(1200px,100% - 48px);margin:0 auto}
+.skip{position:absolute;left:12px;top:-64px;z-index:60;background:var(--gold);color:var(--navy-900);padding:10px 16px;border-radius:4px;font-weight:600}
+.skip:focus{top:12px}
+
+/* =========================================================
+   3. Header
+   ========================================================= */
+.sitebar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.sitebar .shell{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:64px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand img{width:40px;height:40px;object-fit:contain;flex:none}
+.brand-name{display:block;font:700 22px/1.05 var(--font-display);letter-spacing:.005em}
+.brand-sub{display:block;color:var(--muted);font-size:13px;line-height:1.3}
+.sitebar nav{display:flex;gap:22px}
+.sitebar nav a{padding:8px 2px;border-bottom:2px solid transparent;color:#3f5b76;font-size:15px;font-weight:600;white-space:nowrap;transition:color .15s,border-color .15s}
+.sitebar nav a:hover{color:var(--ink)}
+.sitebar nav a[aria-current]{color:var(--ink);border-bottom-color:var(--gold)}
+
+/* =========================================================
+   4. Hero
+   ========================================================= */
+.hero{
+  position:relative;overflow:hidden;color:#fff;
+  background:
+    radial-gradient(900px 480px at 82% 35%,rgba(26,111,196,.38),transparent 70%),
+    linear-gradient(rgba(127,224,238,.07) 1px,transparent 1px) 0 0/32px 32px,
+    linear-gradient(90deg,rgba(127,224,238,.07) 1px,transparent 1px) 0 0/32px 32px,
+    var(--navy-800);
+}
+.hero .shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;padding:64px 0 72px}
+.hero h1{margin:0 0 12px;font:700 clamp(46px,6.2vw,80px)/.96 var(--font-display);letter-spacing:-.005em}
+.hero .lead{margin:0 0 16px;max-width:24ch;color:#d4e8f8;font-size:clamp(20px,2.1vw,26px);font-weight:500;line-height:1.3}
+.hero .desc{margin:0 0 30px;max-width:52ch;color:#b4cfe5;font-size:16px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 20px;border:1px solid transparent;border-radius:4px;font:600 15px/1 var(--font-body);cursor:pointer;transition:background .15s,transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:var(--navy-900)}
+.btn-gold:hover{background:#ffc95e}
+.btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:#1561ab}
+
+/* Lembar gambar */
+.sheet{padding:8px;border:1px solid rgba(255,255,255,.3);background:rgba(7,31,56,.55)}
+.sheet-frame{border:1px solid rgba(255,255,255,.55)}
+.drawing{display:block;width:100%;height:auto}
+.titleblock{display:grid;grid-template-columns:repeat(4,1fr);margin:0;border-top:1px solid rgba(255,255,255,.55)}
+.titleblock div{padding:10px 14px;border-left:1px solid rgba(255,255,255,.35)}
+.titleblock div:first-child{border-left:0}
+.titleblock dt{color:#9fc3df;font-size:13px;line-height:1.3}
+.titleblock dd{margin:2px 0 0;font:700 24px/1.1 var(--font-display)}
+
+/* Gambar teknik: garis tergambar satu kali saat halaman dibuka */
+.ln{stroke:#fff;stroke-width:1.6}
+.cl{stroke:var(--cyan);stroke-width:1;stroke-dasharray:14 3 2 3;fill:none;opacity:.85}
+.proj{stroke:rgba(255,255,255,.35);stroke-width:1;stroke-dasharray:3 5;fill:none}
+.cut{stroke:var(--gold);stroke-width:3.5;fill:none}
+.cutarr{stroke:var(--gold);stroke-width:1.6;fill:none}
+.dim path{stroke:var(--gold);stroke-width:1.2;fill:none}
+.dim .ext{stroke-width:.9;opacity:.8}
+.dim text{fill:var(--gold);font:600 17px var(--font-display)}
+.lbl{fill:#fff;font:600 17px var(--font-display)}
+.view{fill:#cfe6f7;font:600 18px var(--font-display);text-anchor:middle}
+.draw{stroke-dasharray:1;stroke-dashoffset:0;animation:draw 1.4s ease-out var(--d,0s) backwards}
+.fade{animation:fade .7s ease-out 1.5s backwards}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes fade{from{opacity:0}}
+
+/* =========================================================
+   5. Section umum
+   ========================================================= */
+main{padding:24px 0 72px}
+.section{margin-top:64px;scroll-margin-top:84px}
+.section-title{margin:0 0 10px;font:700 clamp(30px,3.4vw,42px)/1.08 var(--font-display);letter-spacing:-.005em}
+.subline{max-width:64ch;margin:0 0 28px;color:var(--muted);font-size:17px}
+
+/* =========================================================
+   6. Gambar soal
+   ========================================================= */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:center}
+.parts{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.parts li{padding:6px 14px;border:1px solid var(--line);border-radius:4px;background:#fff;font-weight:600;font-size:15px}
+.soal{margin:0}
+.soal-btn{display:block;width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:#fff;cursor:zoom-in;transition:border-color .15s}
+.soal-btn:hover{border-color:var(--blue)}
+.soal-btn img{display:block;width:100%;max-height:340px;object-fit:contain}
+.soal figcaption{margin-top:8px;color:var(--muted);font-size:14px}
+.lightbox{padding:0;border:0;background:transparent;max-width:96vw;max-height:96vh;overflow:visible}
+.lightbox::backdrop{background:rgba(7,31,56,.82)}
+.lb-body{position:relative;background:#fff;padding:10px;border-radius:6px}
+.lb-body img{display:block;max-width:92vw;max-height:84vh;object-fit:contain}
+.lb-close{position:absolute;top:-14px;right:-14px;width:36px;height:36px;border:0;border-radius:50%;background:var(--gold);color:var(--navy-900);font:700 22px/1 var(--font-body);cursor:pointer}
+
+/* =========================================================
+   7. Viewer 3D (hanya pembungkus; isi viewer diatur CSS bundel)
+   ========================================================= */
+.fallback{display:none;margin-top:14px;padding:16px 18px;border:1px solid #f0cf85;border-left:4px solid var(--gold);border-radius:6px;background:#fff8e6}
+.fallback.show,.fallback-static,.viewer-failed .fallback{display:block}
+.fallback strong{display:block;font:700 20px/1.2 var(--font-display)}
+.fallback p{margin:4px 0 12px;color:#5a4a1c;font-size:15px}
+.howto{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0 0;padding:0;list-style:none}
+.howto li{padding:20px;border:1px solid var(--line);border-radius:6px;background:#fff}
+.step-index{display:inline-grid;place-items:center;width:34px;height:34px;margin-bottom:10px;border-radius:50%;background:var(--navy-800);color:#fff;font:700 16px/1 var(--font-display)}
+.howto h3{margin:0 0 6px;font:700 22px/1.15 var(--font-display)}
+.howto p{margin:0;color:#4a647c;font-size:15px}
+
+/* =========================================================
+   8. Tahapan
+   ========================================================= */
+.stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:0;padding:0;list-style:none}
+.stage{padding:20px 22px;border:1px solid var(--line);border-top:5px solid var(--c1);border-radius:6px;background:#fff}
+.stage.s2{border-top-color:var(--c2)}
+.stage.s3{border-top-color:var(--c3)}
+.stage-week{display:flex;justify-content:space-between;align-items:baseline;color:var(--muted);font-size:14px;font-weight:600}
+.stage h3{margin:8px 0;font:700 27px/1.1 var(--font-display)}
+.stage p{margin:0;color:#3f5b76;font-size:15.5px}
+.chip{display:inline-block;margin-top:14px;padding:3px 10px;border-radius:4px;background:#e6f1fc;color:#0f4f8f;font-size:14px;font-weight:600}
+
+.weights{margin-top:20px;padding:18px 20px;border:1px solid var(--line);border-radius:6px;background:#fff}
+.weights h3{margin:0 0 10px;font:700 20px/1.2 var(--font-display)}
+.wbar{display:flex;gap:3px;height:48px}
+.wbar span{display:flex;align-items:center;justify-content:center;padding:0 8px;border-radius:3px;font-size:14px;font-weight:600;line-height:1.15;text-align:center}
+.wbar .s1{flex:10;background:var(--c1);color:var(--navy-900)}
+.wbar .s2{flex:20;background:var(--c2);color:var(--navy-900)}
+.wbar .s3{flex:20;background:var(--c3);color:#fff}
+.wsum{margin:12px 0 0;color:var(--muted);font-size:15px}
+.wsum strong{color:var(--ink)}
+
+.uas{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-top:16px;padding:18px 20px;border:2px dashed #e0b34a;border-radius:6px;background:#fff8e6}
+.uas-badge{padding:10px 16px;border-radius:4px;background:var(--gold);color:var(--navy-900);font:700 26px/1 var(--font-display);text-align:center}
+.uas h3{margin:0 0 2px;font:700 22px/1.15 var(--font-display)}
+.uas p{margin:0;color:#5a4a1c;font-size:15.5px}
+
+/* =========================================================
+   9. Rubrik
+   ========================================================= */
+.rubric{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;align-items:start}
+.rubric-note{margin:0;padding:12px 16px;border-left:4px solid var(--blue);border-radius:0 6px 6px 0;background:#e8f1fa;color:#2c5174;font-size:15px}
+.rubric-list{margin:0;padding:6px 22px;list-style:none;border:1px solid var(--line);border-radius:6px;background:#fff}
+.rubric-list li{display:grid;grid-template-columns:150px minmax(0,1fr) 48px;gap:14px;align-items:center;padding:13px 0;border-bottom:1px solid #e6edf4}
+.rubric-list li:last-child{border-bottom:0}
+.rn{font-weight:600}
+.bar{display:block;height:10px;border-radius:2px;background:#e6edf4;overflow:hidden}
+.bar i{display:block;height:100%;width:var(--w);background:var(--c3)}
+.rv{font:700 22px/1 var(--font-display);text-align:right}
+.rubric-list .top .bar i{background:var(--gold)}
+.rubric-list .total{border-top:2px solid var(--ink);border-bottom:0;margin-top:4px;color:var(--ink)}
+.rubric-list .total .bar{background:none}
+.rubric-list .total span:nth-child(2){color:var(--muted);font-size:14px}
+
+/* =========================================================
+   10. Pengumpulan
+   ========================================================= */
+.delivery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{padding:22px;border:1px solid var(--line);border-radius:6px;background:#fff}
+.card h3{margin:0 0 12px;font:700 24px/1.1 var(--font-display)}
+.files{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.file{padding:6px 12px;border-radius:4px;background:var(--navy-800);color:#fff;font:600 17px/1 var(--font-display)}
+.file small{margin-left:6px;color:var(--cyan);font:500 13px var(--font-body)}
+.check{margin:0;padding:0;list-style:none}
+.check li{position:relative;padding:3px 0 3px 28px;color:#3f5b76;font-size:15.5px}
+.check li::before{content:"";position:absolute;left:2px;top:.62em;width:13px;height:7px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg)}
+
+/* =========================================================
+   11. Footer
+   ========================================================= */
+.page-footer{background:var(--navy-800);color:#c3d8ea;padding:22px 0;font-size:14px}
+.page-footer .shell{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+.page-footer strong{margin-right:10px;color:#fff;font:700 18px var(--font-display)}
+
+/* =========================================================
+   12. Responsif
+   ========================================================= */
+@media (max-width:980px){
+  .hero .shell{grid-template-columns:1fr;gap:36px;padding:48px 0 56px}
+  .split,.rubric{grid-template-columns:1fr;gap:24px}
+}
+@media (max-width:760px){
+  .shell{width:calc(100% - 32px)}
+  .sitebar .shell{flex-direction:column;align-items:stretch;gap:0;padding-top:10px}
+  .sitebar nav{gap:20px;overflow-x:auto;scrollbar-width:thin}
+  .sitebar nav a{flex:none;font-size:14px}
+  .brand-name{font-size:20px}
+  .section{margin-top:48px}
+  .howto,.stages,.delivery{grid-template-columns:1fr}
+  .titleblock{grid-template-columns:1fr 1fr}
+  .titleblock div:nth-child(3){border-left:0}
+  .titleblock div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.35)}
+  .rubric-list li{grid-template-columns:110px minmax(0,1fr) 44px;gap:10px}
+  .uas{grid-template-columns:1fr}
+  .uas-badge{justify-self:start}
+}
+@media (max-width:480px){
+  .brand-sub{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+  .draw,.fade{animation:none}
+}
+
+/* =========================================================
+   13. Cetak (halaman instruksi bisa dicetak)
+   ========================================================= */
+@media print{
+  .sitebar,.hero-actions,.viewer-wrap,.soal figcaption,.skip{display:none!important}
+  body{background:#fff}
+  .hero{background:#fff!important;color:#000}
+  .hero .lead,.hero .desc{color:#000}
+  .sheet{display:none}
+  .hero .shell{grid-template-columns:1fr;padding:16px 0}
+  .section{margin-top:28px;break-inside:avoid}
+}
+</style>
+
+<!-- Dua baris di bawah adalah hasil build viewer. Jika viewer di-build ulang, ganti nama file hash-nya sesuai hasil build baru. -->
+<script type="module" crossorigin src="./assets/index-B4k0RgdB.js" onerror="document.documentElement.classList.add('viewer-failed')"></script>
+<link rel="stylesheet" crossorigin href="./assets/index-D7Gd2n6T.css">
 </head>
+
 <body>
-  <header class="sitebar">
-    <div class="shell">
-      <a class="brand" href="#beranda" aria-label="Gambar Mesin, kembali ke atas"><span class="brandmark"><img src="./Logo%20UNY.png" alt="Logo Universitas Negeri Yogyakarta" onerror="this.style.display='none';this.parentElement.classList.add('logo-fallback')"></span><span><strong>Gambar Mesin</strong><small>Sarjana Terapan Teknik Mesin · Fakultas Vokasi UNY</small></span></a>
-      <nav aria-label="Navigasi halaman"><a href="#pengukuran">Pengukuran</a><a href="#tahapan">Tahapan</a><a href="#rubrik">Rubrik</a><a href="#hasil">Pengumpulan</a></nav>
+<a class="skip" href="#main">Lewati ke konten</a>
+
+<header class="sitebar">
+  <div class="shell">
+    <a class="brand" href="#beranda" aria-label="Gambar Mesin, kembali ke atas">
+      <img src="./Logo%20UNY.png" alt="Logo Universitas Negeri Yogyakarta">
+      <span>
+        <span class="brand-name">Gambar Mesin</span>
+        <span class="brand-sub">Sarjana Terapan Teknik Mesin, Fakultas Vokasi UNY</span>
+      </span>
+    </a>
+    <nav aria-label="Navigasi halaman">
+      <a href="#soal">Soal</a>
+      <a href="#pengukuran">Pengukuran</a>
+      <a href="#tahapan">Tahapan</a>
+      <a href="#rubrik">Rubrik</a>
+      <a href="#hasil">Pengumpulan</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="beranda">
+  <div class="shell">
+    <div>
+      <h1>Wheel Assembly</h1>
+      <p class="lead">Dari model 3D menjadi gambar kerja.</p>
+      <p class="desc">Proyek akhir Gambar Mesin: mengamati geometri rakitan, mengukur fitur benda kerja, membuat proyeksi dan potongan, serta menyusun gambar kerja menggunakan AutoCAD 2D.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#pengukuran">Buka viewer 3D</a>
+        <a class="btn btn-ghost" href="#tahapan">Lihat tahapan</a>
+      </div>
     </div>
-  </header>
-  <section class="hero" id="beranda">
-    <div class="shell">
+
+    <!-- Ilustrasi lembar gambar: pandangan depan + potongan A–A. Tanda "Ø ?" = ukuran yang harus diukur sendiri di viewer. -->
+    <div class="sheet" aria-label="Ringkasan proyek">
+      <div class="sheet-frame">
+        <svg class="drawing" viewBox="0 0 560 356" role="img" aria-labelledby="drw-title">
+          <title id="drw-title">Ilustrasi gambar kerja roda: pandangan depan dan potongan A–A dengan garis ukuran</title>
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L10 5L0 9z" fill="#f4b942" stroke="none"/></marker>
+            <pattern id="ht" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#7fe0ee" stroke-width="1" opacity=".8"/></pattern>
+            <pattern id="ht2" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#ffffff" stroke-width="1" opacity=".6"/></pattern>
+          </defs>
+
+          <!-- garis proyeksi -->
+          <path class="proj fade" d="M172 60H374M172 260H374"/>
+
+          <!-- pandangan depan -->
+          <circle class="ln draw" cx="170" cy="160" r="100" fill="none" pathLength="1" style="--d:.1s"/>
+          <circle class="ln draw" cx="170" cy="160" r="84" fill="none" pathLength="1" style="--d:.3s"/>
+          <circle class="ln draw" cx="170" cy="160" r="34" fill="none" pathLength="1" style="--d:.5s"/>
+          <circle class="ln draw" cx="170" cy="160" r="14" fill="none" pathLength="1" style="--d:.7s"/>
+          <path class="cl fade" d="M50 160H290M170 44V276"/>
+
+          <!-- garis potong A–A -->
+          <path class="cut fade" d="M170 30V50M170 270V290"/>
+          <path class="cutarr fade" d="M170 38H192" marker-end="url(#ar)"/>
+          <path class="cutarr fade" d="M170 282H192" marker-end="url(#ar)"/>
+          <text class="lbl fade" x="199" y="43">A</text>
+          <text class="lbl fade" x="199" y="287">A</text>
+
+          <!-- potongan A–A -->
+          <path class="ln draw" fill="url(#ht)" pathLength="1" style="--d:.9s" d="M378 60H422V76H406V126H420V146H380V126H394V76H378Z"/>
+          <path class="ln draw" fill="url(#ht)" pathLength="1" style="--d:1s" d="M378 260H422V244H406V194H420V174H380V194H394V244H378Z"/>
+          <rect class="ln draw" fill="url(#ht2)" pathLength="1" style="--d:1.1s" x="350" y="146" width="100" height="28"/>
+          <path class="cl fade" d="M336 160H464"/>
+
+          <!-- garis ukuran -->
+          <g class="dim fade">
+            <path class="ext" d="M70 166V320M270 166V320"/>
+            <path d="M70 312H270" marker-start="url(#ar)" marker-end="url(#ar)"/>
+            <text x="170" y="305" text-anchor="middle">Ø ?</text>
+            <path class="ext" d="M450 146H482M450 174H482"/>
+            <path d="M476 146V174" marker-start="url(#ar)" marker-end="url(#ar)"/>
+            <text x="488" y="165">Ø ?</text>
+          </g>
+
+          <text class="view fade" x="170" y="346">Pandangan depan</text>
+          <text class="view fade" x="400" y="346">Potongan A–A</text>
+        </svg>
+        <dl class="titleblock">
+          <div><dt>Komponen</dt><dd>4</dd></div>
+          <div><dt>Tahap PBL</dt><dd>3</dd></div>
+          <div><dt>Bobot PBL</dt><dd>50%</dd></div>
+          <div><dt>Satuan</dt><dd>mm</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="shell" id="main">
+
+  <!-- ========== SOAL ========== -->
+  <section id="soal" class="section" aria-labelledby="soal-title">
+    <div class="split">
       <div>
-        <div class="kicker">Project Based Learning</div>
-        <h1>Wheel Assembly<span>.<br>Dari model 3D menjadi gambar kerja.</span></h1>
-        <p>Proyek akhir Gambar Mesin: mengamati geometri rakitan, mengukur fitur benda kerja, membuat proyeksi dan potongan, serta menyusun gambar kerja menggunakan AutoCAD 2D.</p>
-        <div class="hero-actions"><a class="btn btn-solid" href="#pengukuran">⌖ Pengamatan &amp; Pengukuran</a><a class="btn btn-outline" href="#tahapan">Lihat instruksi proyek</a></div>
+        <h2 class="section-title" id="soal-title">Gambar soal</h2>
+        <p class="subline">Acuan proyek. Dari rakitan ini kamu membuat gambar detail untuk empat komponen, ditambah gambar rakitannya.</p>
+        <ul class="parts" aria-label="Komponen yang digambar">
+          <li>Base Plate</li><li>Bracket</li><li>Wheel</li><li>Axle</li>
+        </ul>
       </div>
-      <div class="facts" aria-label="Ringkasan proyek">
-        <div class="fact"><strong>04</strong><span>Komponen utama</span></div><div class="fact"><strong>03</strong><span>Tahap pengerjaan PBL</span></div><div class="fact"><strong>50%</strong><span>Bobot PBL mata kuliah</span></div><div class="fact"><strong>100%</strong><span>Total rubrik internal</span></div>
-      </div>
+      <figure class="soal">
+        <button type="button" class="soal-btn" id="soalOpen" aria-label="Perbesar gambar soal PBL">
+          <img src="./PBL_Gambar_Soal.jpg" alt="Gambar soal PBL Wheel Assembly" loading="lazy" decoding="async">
+        </button>
+        <figcaption>Klik gambar untuk memperbesar.</figcaption>
+      </figure>
     </div>
+    <dialog class="lightbox" id="lightbox" aria-label="Gambar soal diperbesar">
+      <div class="lb-body">
+        <form method="dialog"><button class="lb-close" aria-label="Tutup">×</button></form>
+        <img alt="Gambar soal PBL Wheel Assembly, ukuran penuh">
+      </div>
+    </dialog>
   </section>
-  <main class="shell">
-    <section id="pengukuran" class="section" aria-labelledby="ukur-title">
-      <div class="overline">01 · Pengamatan dan Pengukuran</div>
-      <h2 class="section-title" id="ukur-title">Pengamatan dan Pengukuran Geometri</h2>
-      <p class="subline">Putar model 3D, pilih komponen, dan ukur dimensi CAD dari file STEP. Gunakan hasil pengamatan sebagai dasar pembuatan pandangan dan potongan sendiri di AutoCAD 2D.</p>
+
+  <!-- ========== PENGUKURAN ========== -->
+  <section id="pengukuran" class="section" aria-labelledby="ukur-title">
+    <h2 class="section-title" id="ukur-title">Pengamatan dan pengukuran geometri</h2>
+    <p class="subline">Putar model 3D, pilih komponen, dan ukur dimensi CAD dari file STEP. Gunakan hasil pengamatan sebagai dasar pembuatan pandangan dan potongan sendiri di AutoCAD 2D.</p>
+
+    <div class="viewer-wrap">
+      <!-- ===== BLOK VIEWER: jangan ubah id/atribut data-*, dipakai oleh script viewer ===== -->
       <div id="cad-app" class="cad-app" aria-label="CAD Viewer STEP terintegrasi">
         <div class="cad-card-header">
           <div><strong>CAD Viewer STEP — Gambar Mesin</strong><span>Pengamatan dan pengukuran langsung dalam halaman PBL</span></div>
@@ -47,7 +412,7 @@
               <span class="cad-mode-hint" id="cadModeHint">Klik fitur CAD untuk mengukur</span>
               <div class="visual-menu" id="visualMenu">
                 <button type="button" id="visualStyleButton" aria-haspopup="true" aria-expanded="false">Visual Style ▾</button>
-                <div class="visual-options" id="visualStyleOptions" hidden role="group" aria-label="Pilihan Visual Style">
+                <div class="visual-options" id="visualStyleOptions" hidden role="radiogroup" aria-label="Pilihan Visual Style">
                   <button type="button" data-style="shaded" role="radio" aria-checked="false">Shaded</button>
                   <button type="button" data-style="shaded-edges" role="radio" aria-checked="true">Shaded with Edges</button>
                   <button type="button" data-style="wireframe" role="radio" aria-checked="false">Wireframe</button>
@@ -95,43 +460,213 @@
           </aside>
         </div>
       </div>
-      <div class="howto" aria-label="Alur pengamatan dan pengerjaan">
-        <article><span class="step-index">01</span><h3>Amati model 3D</h3><p>Pilih Wheel Assembly atau komponennya, kemudian putar dan perbesar untuk memahami bentuk serta hubungan rakitan.</p></article>
-        <article><span class="step-index">02</span><h3>Ukur geometri STEP</h3><p>Klik fitur CAD untuk mengukur diameter, radius, chamfer, serta jarak antarpusat atau antartepi.</p></article>
-        <article><span class="step-index">03</span><h3>Buat gambar kerja AutoCAD 2D</h3><p>Susun pandangan, potongan, ukuran, toleransi, serta etiket. Gambar potongan dikerjakan sendiri.</p></article>
-      </div>
-    </section>
-    <section id="tahapan" class="section" aria-labelledby="tahapan-title">
-      <div class="overline">02 · Alur kegiatan</div><h2 class="section-title" id="tahapan-title">Tahapan pengerjaan PBL</h2><p class="subline">Tahapan disusun sesuai alur tugas PBL Gambar Mesin. Bobot setiap tahap merupakan kontribusi terhadap nilai akhir mata kuliah.</p>
-      <div class="timeline">
-        <div class="card"><div class="timelabel">Minggu 13 · Tahap 1</div><h3>Analisis assembly</h3><p>Identifikasi komponen dan hubungan antarbagiannya. Tentukan arah pandangan, rencanakan bidang potong, dan siapkan rancangan awal <i>drawing set</i>.</p><span class="weight">Bobot 10%</span></div>
-        <div class="card"><div class="timelabel">Minggu 14 · Tahap 2</div><h3>Detail drawing komponen</h3><p>Buat gambar pandangan dan potongan tiap komponen dengan AutoCAD 2D. Tambahkan ukuran yang cukup, tepat, dan tidak berulang.</p><span class="weight">Bobot 20%</span></div>
-        <div class="card"><div class="timelabel">Minggu 15 · Tahap 3</div><h3>Penyempurnaan drawing set</h3><p>Periksa toleransi, datum, kekasaran permukaan, etiket, jenis garis, serta konsistensi geometri dan ukuran antarlembar.</p><span class="weight">Bobot 20%</span></div>
-      </div>
-      <div class="notice"><span class="notice-icon">▣</span><div><strong>Minggu 16 — UAS (10%)</strong><div>Finalisasi, pemeriksaan, dan pengumpulan akhir gambar kerja PBL. Tidak ada objek gambar baru pada tahap UAS.</div></div></div>
-    </section>
-    <section id="rubrik" class="section" aria-labelledby="rubrik-title">
-      <div class="overline">03 · Evaluasi</div><h2 class="section-title" id="rubrik-title">Rubrik gambar kerja</h2><p class="subline">Pembagian penilaian produk PBL (total 100%). Rubrik internal ini berbeda dari bobot PBL 50% pada nilai mata kuliah.</p>
-      <div class="rubric">
-        <div class="rubric-item"><strong>15%</strong><span>Pandangan</span><div class="bar"><i style="width:75%"></i></div></div>
-        <div class="rubric-item"><strong>15%</strong><span>Potongan</span><div class="bar"><i style="width:75%"></i></div></div>
-        <div class="rubric-item"><strong>20%</strong><span>Ukuran</span><div class="bar"><i style="width:100%"></i></div></div>
-        <div class="rubric-item"><strong>10%</strong><span>Toleransi</span><div class="bar"><i style="width:50%"></i></div></div>
-        <div class="rubric-item"><strong>10%</strong><span>Tanda pengerjaan</span><div class="bar"><i style="width:50%"></i></div></div>
-        <div class="rubric-item"><strong>15%</strong><span>Etiket</span><div class="bar"><i style="width:75%"></i></div></div>
-        <div class="rubric-item"><strong>15%</strong><span>Kerapian</span><div class="bar"><i style="width:75%"></i></div></div>
-        <div class="rubric-item rubric-total"><strong>100%</strong><span>Total rubrik penilaian</span><p>7 kriteria penilaian</p></div>
-      </div><p class="rubric-foot">Penilaian mengikuti ketentuan resmi pengampu mata kuliah.</p>
-    </section>
-    <section id="hasil" class="section" aria-labelledby="hasil-title">
-      <div class="overline">04 · Hasil akhir</div><h2 class="section-title" id="hasil-title">Keluaran dan pengumpulan</h2><p class="subline">Hasil tugas berupa set gambar kerja yang menyampaikan bentuk, fitur, dan dimensi komponen secara lengkap.</p>
-      <div class="delivery">
-        <div class="card"><h3>Dokumen yang dikumpulkan</h3><ul><li>Gambar detail Base Plate, Bracket, Wheel, dan Axle.</li><li>Gambar rakitan beserta identifikasi komponen.</li><li>Pandangan ortogonal dan potongan yang relevan.</li><li>Dimensi, toleransi, simbol permukaan, serta etiket.</li><li>File gambar kerja AutoCAD 2D berformat <strong>DWG (.dwg)</strong> dan <strong>PDF ukuran A3</strong> sesuai ketentuan dosen.</li></ul></div>
-        <div class="card"><h3>Petunjuk teknis</h3><p>Gunakan satuan <strong>milimeter</strong>. Pisahkan layer jenis garis, sertakan simbol proyeksi serta skala pada etiket, dan periksa keterbacaan hasil cetak A3. Bandingkan ukuran yang diambil dari viewer dengan kebutuhan gambar kerja.</p></div>
-      </div>
-    </section>
-  </main>
-  <footer class="page-footer"><div class="shell"><div><strong>Gambar Mesin · VTM60202</strong> | Sarjana Terapan Teknik Mesin, Fakultas Vokasi UNY</div><div>Project Based Learning</div></div></footer>
+      <!-- ===== AKHIR BLOK VIEWER ===== -->
 
+      <!-- Muncul otomatis jika viewer gagal dimuat, WebGL tidak ada, atau terlalu lama menyiapkan model -->
+      <div id="cad-fallback" class="fallback" role="alert">
+        <strong>Viewer 3D tidak bisa dimuat.</strong>
+        <p data-msg>Muat ulang halaman, atau buka dengan Chrome, Edge, atau Brave versi terbaru.</p>
+        <button type="button" class="btn btn-primary" onclick="location.reload()">Muat ulang</button>
+      </div>
+      <noscript>
+        <div class="fallback fallback-static">
+          <strong>Viewer 3D membutuhkan JavaScript.</strong>
+          <p>Aktifkan JavaScript di browser untuk memutar dan mengukur model.</p>
+        </div>
+      </noscript>
+    </div>
+
+    <ol class="howto" aria-label="Alur pengamatan dan pengerjaan">
+      <li><span class="step-index">1</span><h3>Amati model 3D</h3><p>Pilih Wheel Assembly atau komponennya, kemudian putar dan perbesar untuk memahami bentuk serta hubungan rakitan.</p></li>
+      <li><span class="step-index">2</span><h3>Ukur geometri STEP</h3><p>Klik fitur CAD untuk mengukur diameter, radius, chamfer, serta jarak antarpusat atau antartepi.</p></li>
+      <li><span class="step-index">3</span><h3>Buat gambar kerja AutoCAD 2D</h3><p>Susun pandangan, potongan, ukuran, toleransi, serta etiket. Gambar potongan dikerjakan sendiri.</p></li>
+    </ol>
+  </section>
+
+  <!-- ========== TAHAPAN ========== -->
+  <section id="tahapan" class="section" aria-labelledby="tahapan-title">
+    <h2 class="section-title" id="tahapan-title">Tahapan pengerjaan PBL</h2>
+    <p class="subline">Tiga tahap PBL bernilai total 50% dari nilai akhir mata kuliah. UAS di Minggu 16 dinilai tersendiri.</p>
+
+    <ol class="stages">
+      <li class="stage s1">
+        <div class="stage-week"><span>Minggu 13</span><span>Tahap 1</span></div>
+        <h3>Analisis assembly</h3>
+        <p>Identifikasi komponen dan hubungan antarbagiannya. Tentukan arah pandangan, rencanakan bidang potong, dan siapkan rancangan awal <i>drawing set</i>.</p>
+        <span class="chip">Bobot 10%</span>
+      </li>
+      <li class="stage s2">
+        <div class="stage-week"><span>Minggu 14</span><span>Tahap 2</span></div>
+        <h3>Detail drawing komponen</h3>
+        <p>Buat gambar pandangan dan potongan tiap komponen dengan AutoCAD 2D. Tambahkan ukuran yang cukup, tepat, dan tidak berulang.</p>
+        <span class="chip">Bobot 20%</span>
+      </li>
+      <li class="stage s3">
+        <div class="stage-week"><span>Minggu 15</span><span>Tahap 3</span></div>
+        <h3>Penyempurnaan drawing set</h3>
+        <p>Periksa toleransi, datum, kekasaran permukaan, etiket, jenis garis, serta konsistensi geometri dan ukuran antarlembar.</p>
+        <span class="chip">Bobot 20%</span>
+      </li>
+    </ol>
+
+    <div class="weights" role="group" aria-labelledby="w-title">
+      <h3 id="w-title">Bobot PBL</h3>
+      <div class="wbar" aria-hidden="true">
+        <span class="s1">Tahap 1 · 10%</span>
+        <span class="s2">Tahap 2 · 20%</span>
+        <span class="s3">Tahap 3 · 20%</span>
+      </div>
+      <p class="wsum">10% + 20% + 20% = <strong>50%</strong> bobot PBL pada nilai mata kuliah.</p>
+    </div>
+
+    <aside class="uas">
+      <div class="uas-badge">UAS 10%</div>
+      <div>
+        <h3>Minggu 16 · UAS</h3>
+        <p>Penilaian tersendiri, di luar bobot PBL 50%. Finalisasi, pemeriksaan, dan pengumpulan akhir gambar kerja PBL. Tidak ada objek gambar baru pada tahap UAS.</p>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ========== RUBRIK ========== -->
+  <section id="rubrik" class="section" aria-labelledby="rubrik-title">
+    <div class="rubric">
+      <div>
+        <h2 class="section-title" id="rubrik-title">Rubrik gambar kerja</h2>
+        <p class="subline">Pembagian penilaian produk PBL (total 100%). Rubrik internal ini berbeda dari bobot PBL 50% pada nilai mata kuliah.</p>
+        <p class="rubric-note">Penilaian mengikuti ketentuan resmi pengampu mata kuliah.</p>
+      </div>
+      <ul class="rubric-list">
+        <li><span class="rn">Pandangan</span><span class="bar" aria-hidden="true"><i style="--w:75%"></i></span><span class="rv">15%</span></li>
+        <li><span class="rn">Potongan</span><span class="bar" aria-hidden="true"><i style="--w:75%"></i></span><span class="rv">15%</span></li>
+        <li class="top"><span class="rn">Ukuran</span><span class="bar" aria-hidden="true"><i style="--w:100%"></i></span><span class="rv">20%</span></li>
+        <li><span class="rn">Toleransi</span><span class="bar" aria-hidden="true"><i style="--w:50%"></i></span><span class="rv">10%</span></li>
+        <li><span class="rn">Tanda pengerjaan</span><span class="bar" aria-hidden="true"><i style="--w:50%"></i></span><span class="rv">10%</span></li>
+        <li><span class="rn">Etiket</span><span class="bar" aria-hidden="true"><i style="--w:75%"></i></span><span class="rv">15%</span></li>
+        <li><span class="rn">Kerapian</span><span class="bar" aria-hidden="true"><i style="--w:75%"></i></span><span class="rv">15%</span></li>
+        <li class="total"><span class="rn">Total</span><span>7 kriteria penilaian</span><span class="rv">100%</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== PENGUMPULAN ========== -->
+  <section id="hasil" class="section" aria-labelledby="hasil-title">
+    <h2 class="section-title" id="hasil-title">Keluaran dan pengumpulan</h2>
+    <p class="subline">Hasil tugas berupa set gambar kerja yang menyampaikan bentuk, fitur, dan dimensi komponen secara lengkap.</p>
+
+    <div class="delivery">
+      <div class="card">
+        <h3>Dokumen yang dikumpulkan</h3>
+        <div class="files" aria-label="Format file">
+          <span class="file">.dwg <small>AutoCAD 2D</small></span>
+          <span class="file">.pdf <small>ukuran A3</small></span>
+        </div>
+        <ul class="check">
+          <li>Gambar detail Base Plate, Bracket, Wheel, dan Axle.</li>
+          <li>Gambar rakitan beserta identifikasi komponen.</li>
+          <li>Pandangan ortogonal dan potongan yang relevan.</li>
+          <li>Dimensi, toleransi, simbol permukaan, serta etiket.</li>
+          <li>File format DWG dan PDF A3 sesuai ketentuan dosen.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Petunjuk teknis</h3>
+        <ul class="check">
+          <li>Gunakan satuan <strong>milimeter</strong>.</li>
+          <li>Pisahkan layer jenis garis.</li>
+          <li>Sertakan simbol proyeksi serta skala pada etiket.</li>
+          <li>Periksa keterbacaan hasil cetak A3.</li>
+          <li>Bandingkan ukuran yang diambil dari viewer dengan kebutuhan gambar kerja.</li>
+        </ul>
+      </div>
+
+      <!--
+      TODO: hapus tanda komentar ini setelah diisi (batas waktu, tempat pengumpulan, penamaan file).
+
+      <div class="card">
+        <h3>Cara mengumpulkan</h3>
+        <ul class="check">
+          <li>Batas waktu: ........</li>
+          <li>Kumpulkan melalui: ........ (tautkan ke Classroom/Besmart)</li>
+          <li>Nama file: ........</li>
+        </ul>
+      </div>
+      -->
+    </div>
+  </section>
+</main>
+
+<footer class="page-footer">
+  <div class="shell">
+    <div><strong>Gambar Mesin · VTM60202</strong>Sarjana Terapan Teknik Mesin, Fakultas Vokasi UNY</div>
+    <div>Project Based Learning</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* 1. Gambar soal: klik untuk memperbesar */
+  var open=document.getElementById('soalOpen');
+  var dlg=document.getElementById('lightbox');
+  if(open && dlg){
+    var thumb=open.querySelector('img');
+    if(typeof dlg.showModal==='function'){
+      var big=dlg.querySelector('img');
+      open.addEventListener('click',function(){
+        if(!big.getAttribute('src')) big.setAttribute('src',thumb.getAttribute('src'));
+        dlg.showModal();
+      });
+      dlg.addEventListener('click',function(e){ if(e.target===dlg) dlg.close(); });
+    }else{
+      open.addEventListener('click',function(){ window.open(thumb.src,'_blank','noopener'); });
+    }
+  }
+
+  /* 2. Penanda menu sesuai bagian yang sedang dibaca */
+  var links=[].slice.call(document.querySelectorAll('.sitebar nav a'));
+  if('IntersectionObserver' in window && links.length){
+    var map={};
+    links.forEach(function(a){ map[a.getAttribute('href').slice(1)]=a; });
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        links.forEach(function(a){ a.removeAttribute('aria-current'); });
+        var a=map[e.target.id];
+        if(a) a.setAttribute('aria-current','true');
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(map).forEach(function(id){
+      var s=document.getElementById(id);
+      if(s) io.observe(s);
+    });
+  }
+
+  /* 3. Cadangan jika viewer 3D tidak jalan */
+  var fb=document.getElementById('cad-fallback');
+  var st=document.getElementById('status');
+  function fail(msg){
+    if(!fb) return;
+    var m=fb.querySelector('[data-msg]');
+    if(m && msg) m.textContent=msg;
+    fb.classList.add('show');
+  }
+  var gl=false;
+  try{
+    var c=document.createElement('canvas');
+    var ctx=c.getContext('webgl2')||c.getContext('webgl');
+    gl=!!ctx;
+    if(ctx){ var x=ctx.getExtension('WEBGL_lose_context'); if(x) x.loseContext(); }
+  }catch(err){}
+  if(!gl){
+    fail('Browser atau perangkat ini tidak mendukung WebGL, sehingga model 3D tidak bisa ditampilkan. Coba aktifkan akselerasi hardware atau gunakan browser lain.');
+    return;
+  }
+  setTimeout(function(){
+    if(st && /menyiapkan/i.test(st.textContent)){
+      fail('Model 3D belum selesai dimuat. Periksa koneksi internet, lalu muat ulang halaman.');
+    }
+  },30000);
+})();
+</script>
 </body>
 </html>
