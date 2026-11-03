@@ -7,7 +7,7 @@
 <title>Wheel Assembly | PBL Gambar Mesin</title>
 <meta name="description" content="Project Based Learning Gambar Mesin: pengamatan dan pengukuran model CAD STEP, tahapan pengerjaan, rubrik penilaian, dan pengumpulan gambar kerja AutoCAD 2D.">
 <link rel="canonical" href="https://a-fikrie.github.io/gambar-mesin/">
-<link rel="icon" href="./Logo%20UNY.png">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
 
 <!-- Preview saat link dibagikan (WhatsApp, Telegram, dll.) -->
 <meta property="og:type" content="website">
@@ -272,6 +272,138 @@ main{padding:24px 0 72px}
 <!-- Dua baris di bawah adalah hasil build viewer. Jika viewer di-build ulang, ganti nama file hash-nya sesuai hasil build baru. -->
 <script type="module" crossorigin src="./assets/index-B4k0RgdB.js" onerror="document.documentElement.classList.add('viewer-failed')"></script>
 <link rel="stylesheet" crossorigin href="./assets/index-D7Gd2n6T.css">
+
+<!-- ============================================================
+     Penyelaras tampilan viewer.
+     HARUS tetap di bawah <link> assets di atas, supaya menang urutan.
+     Isinya hanya kosmetik (radius, font, warna) — tidak menyentuh
+     id, kelas fungsional, atau tata letak yang dipakai skrip viewer.
+     ============================================================ -->
+<style>
+/* --- Kerangka kartu viewer --- */
+#cad-app{
+  border:1px solid var(--line)!important;
+  border-radius:6px!important;
+  background:#fff!important;
+  box-shadow:none!important;
+  font-family:var(--font-body)!important;
+  overflow:hidden!important;
+}
+#cad-app *{font-family:inherit!important}
+
+/* --- Kepala kartu --- */
+#cad-app .cad-card-header{
+  border-bottom:1px solid var(--line)!important;
+  border-radius:0!important;
+  background:#fff!important;
+  padding:16px 20px!important;
+}
+#cad-app .cad-card-header strong{
+  font:700 22px/1.15 var(--font-display)!important;
+  color:var(--ink)!important;
+}
+#cad-app .cad-card-header span{color:var(--muted)!important;font-size:14px!important}
+#cad-app .cad-card-counter{
+  border-radius:4px!important;
+  background:#e8f1fa!important;
+  color:#0f4f8f!important;
+  padding:5px 11px!important;
+  font-size:14px!important;
+  font-weight:600!important;
+}
+
+/* --- Tombol toolbar --- */
+#cad-app .cad-toolbar button,
+#cad-app .visual-options button,
+#cad-app #resetView,
+#cad-app #clear{
+  border-radius:4px!important;
+  border:1px solid var(--line)!important;
+  background:#fff!important;
+  color:#3f5b76!important;
+  font-size:15px!important;
+  font-weight:600!important;
+  transition:border-color .15s,background .15s!important;
+}
+#cad-app .cad-toolbar button:hover,
+#cad-app .visual-options button:hover{
+  border-color:var(--blue)!important;
+  background:#f4f8fc!important;
+}
+/* Tombol mode aktif memakai warna aksen navy, bukan biru terang */
+#cad-app .cad-toolbar button.active,
+#cad-app .cad-toolbar button[aria-pressed="true"],
+#cad-app .visual-options button[aria-checked="true"]{
+  background:var(--navy-800)!important;
+  border-color:var(--navy-800)!important;
+  color:#fff!important;
+}
+#cad-app .cad-mode-hint{color:var(--muted)!important;font-size:14px!important}
+#cad-app .visual-options{
+  border:1px solid var(--line)!important;
+  border-radius:6px!important;
+  box-shadow:0 6px 20px rgba(12,42,71,.1)!important;
+}
+
+/* --- Panggung 3D --- */
+#cad-app .cad-stage{
+  border-radius:4px!important;
+  border:1px solid var(--line)!important;
+  background:#f7fafd!important;
+}
+#cad-app .cad-status{
+  border-radius:4px!important;
+  font-size:14px!important;
+}
+#cad-app .cad-view-hint{
+  color:var(--muted)!important;
+  font-size:13.5px!important;
+  font-weight:500!important;
+}
+
+/* --- Panel kanan --- */
+#cad-app .cad-side{
+  border-left:1px solid var(--line)!important;
+  background:#fbfcfe!important;
+}
+#cad-app .cad-label{
+  color:var(--ink)!important;
+  font-size:14px!important;
+  font-weight:600!important;
+}
+#cad-app #model{
+  border-radius:4px!important;
+  border:1px solid var(--line)!important;
+  font-size:15px!important;
+  background:#fff!important;
+}
+#cad-app .cad-measure-result{
+  border-radius:6px!important;
+  border:1px solid var(--line)!important;
+  border-left:4px solid var(--gold)!important;
+  background:#fff!important;
+}
+#cad-app .cad-result-label{color:var(--muted)!important;font-size:13.5px!important}
+#cad-app #result{
+  font:700 30px/1.1 var(--font-display)!important;
+  color:var(--ink)!important;
+}
+#cad-app #method{color:var(--muted)!important;font-size:14px!important}
+#cad-app .cad-mini-guide h3{
+  margin:0 0 6px!important;
+  font:700 19px/1.2 var(--font-display)!important;
+  color:var(--ink)!important;
+}
+#cad-app .cad-mini-guide p,
+#cad-app .cad-more-guide p{color:#3f5b76!important;font-size:14px!important}
+#cad-app .cad-more-guide summary{
+  color:var(--blue)!important;
+  font-size:15px!important;
+  font-weight:600!important;
+  cursor:pointer!important;
+}
+#cad-app .cad-study-note{color:var(--muted)!important;font-size:13.5px!important}
+</style>
 </head>
 
 <body>
