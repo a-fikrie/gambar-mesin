@@ -2,257 +2,119 @@
 <html lang="id">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#173757">
-  <meta name="description" content="Project Based Learning Gambar Mesin: Wheel Assembly dan empat komponen, model 3D interaktif, instruksi tugas, dan rubrik penilaian.">
-  <title>Wheel Assembly | Gambar Mesin · UNY</title>
-  <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
-  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102944">
+  <meta name="description" content="Project Based Learning Gambar Mesin: pengamatan dan pengukuran model CAD STEP, tahapan pengerjaan, rubrik penilaian, dan pengumpulan gambar kerja AutoCAD 2D.">
+  <title>Wheel Assembly | PBL Gambar Mesin</title>
   <style>
-    :root {
-      color-scheme:light;
-      --navy:#102d4b;--blue:#1765b1;--blue-deep:#144b83;--sky:#e9f3fc;
-      --ink:#19354e;--muted:#59718a;--line:#dae5ef;--page:#f3f6fa;--card:#fff;
-      --radius:18px;
-    }
-    *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:24px}
-    body{margin:0;background:var(--page);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.58;-webkit-font-smoothing:antialiased}
-    button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
-    button:focus-visible,a:focus-visible{outline:3px solid #41aaf7;outline-offset:3px}
-    .container{width:min(1220px,calc(100% - 44px));margin-inline:auto}
-    .masthead{background:#fff;border-bottom:1px solid var(--line)}
-    .masthead-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:15px}
-    .identity{display:flex;align-items:center;gap:15px;min-width:0}
-    .unymark{width:64px;height:64px;flex:0 0 64px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#fff}
-    .unymark img{width:100%;height:100%;object-fit:contain}
-    .logo-backup{display:none;font-size:19px;font-weight:900;letter-spacing:-1px;color:#34318e}
-    .brand-title{font-size:clamp(16px,1.65vw,21px);font-weight:850;line-height:1.2;color:var(--navy);letter-spacing:-.03em}
-    .brand-subtitle{display:block;color:var(--muted);font-size:clamp(11px,1vw,13px);font-weight:550;line-height:1.45;margin-top:4px}
-    .topnav{display:flex;align-items:center;gap:22px;flex-shrink:0}
-    .topnav a{font-size:13px;font-weight:720;color:#45617c;white-space:nowrap}.topnav a:hover{color:var(--blue)}
-    .intro{background:linear-gradient(110deg,#112d4a 0%,#1b4a76 75%,#236493 100%);color:#fff;position:relative;overflow:hidden}
-    .intro::after{content:"";position:absolute;right:-90px;top:-180px;width:420px;height:420px;border:1px solid #fff2;border-radius:50%;box-shadow:0 0 0 95px #ffffff05,0 0 0 190px #ffffff06;pointer-events:none}
-    .intro-inner{padding:38px 0 42px;position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.8fr) minmax(180px,.55fr);align-items:center;gap:30px}
-    .kicker{font-weight:850;text-transform:uppercase;letter-spacing:.16em;color:#9cdefa;font-size:11px;margin:0 0 7px}
-    h1,h2,h3,p{margin-top:0}
-    .intro h1{font-size:clamp(30px,3.8vw,49px);line-height:1.13;letter-spacing:-.05em;margin:0 0 10px}
-    .intro-desc{font-size:clamp(13px,1.25vw,15px);line-height:1.7;color:#e6f2fa;margin:0;max-width:740px}
-    .intro-chip{justify-self:end;padding:12px 16px;border:1px solid #ffffff40;border-radius:12px;background:#ffffff14;min-width:175px}
-    .intro-chip strong{display:block;font-size:23px;line-height:1.25}.intro-chip span{font-size:12px;color:#e4f2ff}
-    main{padding-top:28px;padding-bottom:44px}
-    .section-top{margin:0 0 16px}
-    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:800;color:var(--blue);margin-bottom:4px}
-    h2{font-size:clamp(23px,2.4vw,30px);line-height:1.25;letter-spacing:-.035em;color:var(--navy);margin-bottom:6px}
-    .section-top>p:last-child{font-size:14px;color:var(--muted);margin:0}
-    .workspace{display:grid;grid-template-columns:minmax(0,1.38fr) minmax(310px,.84fr);gap:18px;align-items:stretch}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-width:0;box-shadow:0 11px 34px #17345008}
-    .card-head{min-height:58px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line)}
-    .card-head strong{font-size:15px;font-weight:800;color:var(--navy)}
-    .subtle{font-size:12px;color:var(--muted)}
-    .viewer-shell{height:clamp(400px,41vw,570px);background:linear-gradient(145deg,#d3deec 0%,#aebed2 70%,#a9b9cf 100%);position:relative;overflow:hidden}
-    .viewer-shell::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 44% 32%,#ffffffb8,transparent 66%)}
-    model-viewer{position:relative;display:block;width:100%;height:100%;--poster-color:transparent;outline:none}
-    .loading{position:absolute;top:14px;left:14px;z-index:2;background:#fffd;border:1px solid #d2dce6;padding:6px 10px;color:#44596a;border-radius:9px;font-size:12px;font-weight:650;pointer-events:none;max-width:calc(100% - 28px)}
-    .loading.hidden{display:none}.loading.is-error{background:#fff3f3;border-color:#f0b9b9;color:#a33838}
-    .view-toolbar{padding:10px 14px 13px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;border-top:1px solid var(--line)}
-    .tool-btn{border:1px solid #d8e4ef;background:#f7fafc;color:#294f75;border-radius:10px;padding:9px 12px;min-height:43px;font-weight:760;font-size:12px;transition:background .16s,border-color .16s}
-    .tool-btn:hover{background:#e7f1fa;border-color:#bcd4e8}.tool-btn[aria-pressed="true"]{background:#dcecfb;border-color:#84b6df;color:#144c83}
-    .tool-spacer{margin-left:auto}
-    .model-panel{display:flex;flex-direction:column}
-    .model-panel .card-head{padding-inline:21px}.model-contents{padding:20px 21px 23px;flex:1;display:flex;flex-direction:column}
-    .part-name{font-size:clamp(25px,2.8vw,33px);font-weight:850;line-height:1.2;letter-spacing:-.04em;color:var(--navy);margin:0 0 8px}
-    .part-desc{font-size:14px;line-height:1.7;color:var(--muted);margin:0 0 22px;min-height:50px}
-    .selector-title{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#496980;margin:0 0 11px}
-    .part-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-    .part-btn{min-width:0;min-height:59px;display:flex;align-items:center;gap:11px;text-align:left;border:1px solid #d6e4ef;border-radius:11px;background:#f8fafc;color:var(--ink);padding:10px 12px;font-weight:740;font-size:14px;transition:background .15s,border-color .15s}
-    .part-btn:hover{background:#eaf2fa;border-color:#a5c8e3}.part-btn[aria-pressed="true"]{color:#fff;background:var(--blue);border-color:var(--blue);box-shadow:0 3px 10px #1765b12a}
-    .part-btn:first-child{grid-column:1/-1}.part-btn:first-child:before{content:"◈";font-size:18px;line-height:1}
-    .part-num{font-size:12px;color:#6b8499;font-weight:820}.part-btn[aria-pressed="true"] .part-num{color:#e4f5ff}
-    .part-spec{margin-top:20px;background:#f7fafc;border:1px solid #e1eaf2;border-radius:12px;padding:15px 16px;display:grid;gap:9px}
-    .spec-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13px;border-bottom:1px dashed #dbe5ee;padding-bottom:9px}
-    .spec-row:last-child{border:0;padding:0}.spec-row span{color:#5a7188}.spec-row strong{text-align:right;color:var(--navy)}
-    .lower{margin-top:35px}
-    .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
-    .step{padding:21px 20px;border:1px solid var(--line);border-radius:16px;background:white}
-    .step-num{display:inline-flex;font-size:12px;font-weight:860;color:var(--blue);margin-bottom:9px}
-    .step h3{font-size:17px;line-height:1.35;color:var(--navy);margin:0 0 8px}.step p{font-size:13px;color:var(--muted);line-height:1.72;margin:0}
-    .rubric{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-    .measure{min-width:0}.measure strong{display:block;color:var(--navy);font-size:23px;line-height:1.15;font-weight:840}.measure span{font-size:13px;color:var(--muted)}
-    .meter{height:5px;margin-top:12px;border-radius:6px;background:#e7eef5}.meter div{height:100%;background:linear-gradient(90deg,#2376c9,#31adc3);border-radius:6px;width:var(--width)}
-    .deliver{display:grid;grid-template-columns:1fr 1fr;gap:14px}.deliver .step{padding:22px}.deliver ul{margin:7px 0 0;padding-left:18px}.deliver li{font-size:14px;color:var(--muted);line-height:1.75}.deliver p{font-size:14px}
-    footer{background:#102d4b;color:#e5f0f9}.footer-inner{padding:21px 0;display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;font-size:13px}
-    .footer-inner strong{color:#fff}
-    @media(max-width:1020px){.workspace{grid-template-columns:minmax(0,1fr)}.viewer-shell{height:clamp(370px,60vw,560px)}.model-panel .model-contents{padding:22px}.part-desc{min-height:0}.part-list{grid-template-columns:repeat(5,minmax(0,1fr))}.part-btn{flex-direction:column;align-items:flex-start;justify-content:center;gap:2px;min-height:68px}.part-btn:first-child{grid-column:auto}.part-btn:first-child:before{display:none}.rubric{grid-template-columns:repeat(4,minmax(0,1fr))}}
-    @media(max-width:700px){.container{width:min(100% - 28px,620px)}.masthead-inner{padding-block:11px}.unymark{width:52px;height:52px;flex-basis:52px}.identity{gap:10px}.brand-title{font-size:17px}.brand-subtitle{font-size:11px}.topnav{display:none}.intro-inner{grid-template-columns:1fr;gap:10px;padding:27px 0 29px}.intro-chip{justify-self:start;padding:8px 12px;min-width:0;display:flex;align-items:center;gap:8px}.intro-chip strong{font-size:17px}.intro-chip span{font-size:11px}.intro h1{font-size:34px}.intro-desc{font-size:13px}main{padding-top:22px}.section-top>p:last-child{font-size:13px}.viewer-shell{height:clamp(320px,94vw,440px)}.card-head{padding:11px 13px;min-height:51px}.model-contents{padding:18px!important}.part-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.part-btn{flex-direction:row;align-items:center;justify-content:flex-start;min-height:52px;font-size:13px;padding:9px 11px}.part-btn:first-child{grid-column:1/-1}.part-desc{font-size:13px;margin-bottom:17px}.part-name{font-size:26px}.steps{grid-template-columns:1fr}.step{padding:18px}.rubric{grid-template-columns:repeat(2,minmax(0,1fr));padding:17px;gap:20px 16px}.deliver{grid-template-columns:1fr}.view-toolbar{padding:9px;gap:7px}.tool-btn{flex:1 1 auto;font-size:12px;padding:9px 10px}.tool-spacer{margin-left:0}.footer-inner{flex-direction:column;align-items:flex-start;gap:6px;font-size:12px}}
-    @media(max-width:390px){.intro h1{font-size:30px}.brand-title{font-size:15px}.unymark{width:44px;height:44px;flex-basis:44px}.part-btn{font-size:12px}.viewer-shell{height:310px}.tool-btn{font-size:11px}.card-head strong{font-size:13px}}
+    :root{--ink:#102944;--navy:#12365b;--blue:#1769bf;--cyan:#69dfe8;--surface:#f3f7fb;--muted:#637b91;--line:#dce6f0;--white:#fff;--radius:18px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--surface);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline:3px solid #66c9e9;outline-offset:3px}
+    .shell{width:min(1360px,calc(100% - 52px));margin:0 auto}
+    .sitebar{background:#fff;border-bottom:1px solid var(--line)}
+    .sitebar .shell{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}.brandmark{width:42px;height:42px;border-radius:12px;background:#e4f2ff;color:#1370c4;font-size:24px;font-weight:900;display:grid;place-items:center}.brand strong{display:block;font-size:14px;line-height:1.3}.brand small{display:block;color:#6d859c;letter-spacing:.05em;font-size:10px;font-weight:750;margin-top:2px}
+    .sitebar nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}.sitebar nav a{font-size:12px;font-weight:800;color:#526e87}.sitebar nav a:hover{color:var(--blue)}
+    .hero{background:linear-gradient(112deg,#102944 4%,#153d69 64%,#12608c);color:white;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:410px;height:410px;right:-65px;top:-170px;border:1px solid #ffffff20;border-radius:50%;box-shadow:0 0 0 58px #ffffff07,0 0 0 134px #ffffff05}
+    .hero .shell{padding:56px 0 59px;position:relative;display:grid;grid-template-columns:1.55fr .68fr;align-items:center;gap:48px}.kicker{margin:0 0 12px;color:#a6eaff;font-size:10px;text-transform:uppercase;letter-spacing:.17em;font-weight:850}.hero h1{font-size:clamp(31px,4vw,52px);line-height:1.12;letter-spacing:-.038em;margin:0 0 17px;font-weight:860}.hero h1 span{color:#75e3eb}.hero p{margin:0 0 23px;max-width:650px;font-size:14px;color:#d6e7f5}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;border-radius:10px;padding:11px 16px;min-height:42px;font-size:12px;font-weight:800;cursor:pointer;transition:background .15s,transform .15s}.btn:hover{transform:translateY(-1px)}.btn-solid{background:#1a74d0;color:#fff}.btn-solid:hover{background:#1164b5}.btn-outline{background:#ffffff10;border-color:#ffffff45;color:#fff}.btn-outline:hover{background:#ffffff1e}.btn-soft{color:#145e9f;background:#e6f2fc;border:1px solid #c9e0f4}.btn-soft:hover{background:#d7eafa}
+    .facts{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fact{padding:17px;border-radius:14px;background:#ffffff13;border:1px solid #ffffff25}.fact strong{font-size:25px;line-height:1.1;display:block}.fact span{font-size:10.5px;color:#c3d8e9;display:block;margin-top:7px}
+    main{padding:43px 0 58px}.section{margin-top:47px;scroll-margin-top:18px}.section:first-child{margin-top:0}.overline{font-size:10px;color:#1477bd;letter-spacing:.17em;text-transform:uppercase;font-weight:900;margin:0 0 6px}.section-title{margin:0 0 9px;font-size:clamp(24px,2.6vw,31px);letter-spacing:-.035em;line-height:1.25}.subline{font-size:13px;color:var(--muted);margin:0 0 21px;max-width:920px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}.chip{font-size:11px;font-weight:700;background:#e7f1fa;border:1px solid #d3e3f0;border-radius:99px;color:#326083;padding:6px 11px}
+    .cad-card{border-radius:var(--radius);border:1px solid #d6e2ee;background:#fff;overflow:hidden;box-shadow:0 16px 44px #153c5b0c}.cad-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--line)}.cad-card-head strong{font-size:14px}.cad-card-head small{display:block;color:#7990a3;font-size:11px;margin-top:2px}.cad-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.cad-tools .btn{min-height:38px;padding:8px 13px;font-size:11px}.cad-tag{font-size:9px;font-weight:850;letter-spacing:.06em;border-radius:99px;padding:5px 8px;background:#e5f9f1;color:#10865c}
+    .frame-wrap{background:#162338;position:relative}.cad-frame{display:block;width:100%;height:780px;border:0;background:#152338}.frame-note{padding:11px 19px;font-size:11px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;color:#617c94;background:#f7fbfe;border-top:1px solid var(--line)}.frame-note a{color:#1568b9;font-weight:800}
+    .howto{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:15px}.howto article{padding:17px 19px;background:#fff;border:1px solid var(--line);border-radius:13px}.howto h3{font-size:13px;margin:0 0 6px;color:#123a60}.howto p{font-size:11.5px;color:#5d788f;margin:0;line-height:1.72}.step-index{display:inline-flex;justify-content:center;align-items:center;font-size:10px;background:#eaf3fc;border-radius:7px;color:#1769bc;width:26px;height:26px;margin-bottom:8px;font-weight:900}
+    .resource-panel{margin-top:17px;border:1px solid var(--line);background:#fff;border-radius:15px;padding:21px 24px;display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:center}.resource-panel h3{font-size:15px;margin:0 0 5px}.resource-panel p{font-size:12px;color:#60798f;margin:0}.resources{display:grid;grid-template-columns:1fr 1fr;gap:9px}.resources a{font-size:11.5px;padding:12px 10px;display:flex;align-items:center;justify-content:center;text-align:center;min-height:48px;border-radius:9px;font-weight:800;border:1px solid #cfe0ef;background:#f1f7fd;color:#235c8c}.resources a:first-child{background:#1969be;border-color:#1969be;color:#fff}
+    .timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.timeline .card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:19px;box-shadow:0 7px 26px #10294409}.timelabel{font-size:10px;font-weight:900;color:#096eb8;letter-spacing:.08em;text-transform:uppercase}.timeline h3{margin:10px 0 8px;font-size:16px;line-height:1.35}.timeline p{margin:0;color:#60758b;font-size:12px;line-height:1.75}.weight{display:inline-block;background:#e9f5ff;border-radius:7px;color:#1767b2;padding:4px 8px;font-size:10px;font-weight:800;margin-top:14px}
+    .notice{display:flex;align-items:flex-start;gap:12px;background:#eaf3ff;border:1px solid #d5e5f7;border-radius:12px;padding:14px 17px;font-size:12px;color:#285172;margin-top:14px}.notice strong{color:#103c70}.notice-icon{font-size:20px;line-height:1.4}
+    .rubric{padding:22px;border-radius:18px;background:#fff;border:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.rubric-item{min-width:0}.rubric-item strong{font-size:23px;color:#123e67}.rubric-item span{display:block;font-size:11px;color:#637a90;margin:1px 0 9px}.bar{height:6px;border-radius:99px;background:#e6edf4;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#2475d6,#2aa5b2);border-radius:99px}.rubric-foot{color:#60758b;font-size:11.5px;margin:12px 0 0}
+    .delivery{display:grid;grid-template-columns:1fr 1fr;gap:14px}.delivery .card{background:#fff;border:1px solid var(--line);padding:22px;border-radius:15px}.delivery h3{font-size:15px;margin:0 0 10px}.delivery p,.delivery li{font-size:12px;color:#546f85;line-height:1.86}.delivery p{margin:0}.delivery ul{margin:0;padding-left:20px}
+    .page-footer{background:#102944;color:#cbddec;font-size:11px;padding:20px 0}.page-footer .shell{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.page-footer strong{color:#fff}
+    @media(max-width:940px){.hero .shell{grid-template-columns:1fr;gap:22px;padding:46px 0}.facts{grid-template-columns:repeat(4,1fr)}.resource-panel{grid-template-columns:1fr}.cad-frame{height:820px}}
+    @media(max-width:700px){.shell{width:calc(100% - 28px)}.sitebar .shell{min-height:65px}.sitebar nav{gap:10px}.sitebar nav a{font-size:10px}.brandmark{width:36px;height:36px}.brand small{font-size:9px}.hero .shell{padding:36px 0 40px}.facts{grid-template-columns:1fr 1fr}.fact{padding:12px}.fact strong{font-size:22px}main{padding:30px 0 43px}.section{margin-top:36px}.howto,.timeline,.delivery{grid-template-columns:1fr}.rubric{grid-template-columns:1fr 1fr;gap:17px}.cad-frame{height:1080px}.cad-card-head{padding:14px}.cad-tools{width:100%}.resource-panel{padding:17px}.resources{grid-template-columns:1fr}.frame-note{font-size:10px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-    html.embed .masthead,html.embed .intro{display:none}html.embed main{padding-top:18px}
   </style>
 </head>
 <body>
-  <header class="masthead"><div class="container masthead-inner">
-    <div class="identity">
-      <div class="unymark" aria-label="Logo Universitas Negeri Yogyakarta">
-        <img id="uny-logo" src="Logo UNY.png" alt="Logo Universitas Negeri Yogyakarta" width="64" height="64">
-        <span class="logo-backup" id="uny-fallback" aria-hidden="true">UNY</span>
-      </div>
-      <div><div class="brand-title">Sarjana Terapan Teknik Mesin</div><span class="brand-subtitle">Fakultas Vokasi UNY</span></div>
+  <header class="sitebar">
+    <div class="shell">
+      <a class="brand" href="#beranda" aria-label="Gambar Mesin, kembali ke atas"><span class="brandmark" aria-hidden="true">◇</span><span><strong>Gambar Mesin</strong><small>PBL · VTM60202 · UNY</small></span></a>
+      <nav aria-label="Navigasi halaman"><a href="#pengukuran">Pengukuran</a><a href="#tahapan">Tahapan</a><a href="#rubrik">Rubrik</a><a href="#hasil">Pengumpulan</a></nav>
     </div>
-    <nav class="topnav" aria-label="Navigasi halaman"><a href="#eksplorasi">Analisis</a><a href="#instruksi">Tahapan Pengerjaan</a><a href="#rubrik">Rubrik Penilaian</a><a href="#pengumpulan">Hasil dan Pengumpulan</a></nav>
-  </div></header>
-  <section class="intro"><div class="container intro-inner">
-    <div><p class="kicker">Project Based Learning</p><h1>Wheel Assembly</h1><p class="intro-desc">Pelajari rakitan roda dan empat komponennya. Gunakan bentuk 3D sebagai dasar penyusunan gambar teknik lengkap dengan pandangan, potongan, ukuran, toleransi, dan etiket.</p></div>
-    <div class="intro-chip"><strong>4 Komponen</strong><span>1 Rakitan · 1 Proyek</span></div>
-  </div></section>
-  <main class="container">
-    <section id="eksplorasi" aria-labelledby="explore-title">
-      <div class="section-top"><p class="eyebrow">01 · Analisis</p><h2 id="explore-title">Analisis Geometri dan Rakitan</h2><p>Pilih komponen, putar, dan perbesar untuk mengamati setiap detail.</p></div>
-      <div class="workspace">
-        <div class="card" aria-label="Viewer 3D interaktif">
-          <div class="card-head"><strong>Tampilan 3D</strong><span class="subtle" id="viewer-name">Wheel Assembly</span></div>
-          <div class="viewer-shell" id="viewer-shell">
-            <model-viewer id="viewer" src="WHEEL%20ASSEMBLY.glb" alt="Rakitan Wheel Assembly" camera-controls touch-action="pan-y" camera-orbit="314deg 72deg 118%" camera-target="auto auto auto" field-of-view="23deg" interaction-prompt="auto" loading="eager" environment-image="neutral" exposure="0.86" shadow-intensity="0.85" shadow-softness="0.78" tone-mapping="neutral"></model-viewer>
-            <div class="loading" id="loading" role="status" aria-live="polite">Memuat rakitan...</div>
-          </div>
-          <div class="view-toolbar" role="group" aria-label="Pengaturan viewer">
-            <button type="button" id="grey" class="tool-btn" aria-pressed="true">Tampilan standar</button>
-            <button type="button" id="color" class="tool-btn" aria-pressed="false">Identifikasi komponen</button>
-            <button type="button" id="rotate" class="tool-btn" aria-pressed="false">Putar otomatis</button>
-            <button type="button" id="reset" class="tool-btn tool-spacer">Atur ulang</button>
-            <button type="button" id="fullscreen" class="tool-btn">Layar penuh</button>
-          </div>
+  </header>
+  <section class="hero" id="beranda">
+    <div class="shell">
+      <div>
+        <div class="kicker">Project Based Learning · Semester 1 · 2026/2027</div>
+        <h1>Wheel Assembly<span>.<br>Dari model 3D menjadi gambar kerja.</span></h1>
+        <p>Proyek akhir Gambar Mesin: mengamati geometri rakitan, mengukur fitur benda kerja, membuat proyeksi dan potongan, serta menyusun gambar kerja menggunakan AutoCAD 2D.</p>
+        <div class="hero-actions"><a class="btn btn-solid" href="#pengukuran">⌖ Pengamatan &amp; Pengukuran</a><a class="btn btn-outline" href="#tahapan">Lihat instruksi proyek</a></div>
+      </div>
+      <div class="facts" aria-label="Ringkasan proyek">
+        <div class="fact"><strong>04</strong><span>Komponen utama</span></div><div class="fact"><strong>03</strong><span>Tahap pengerjaan PBL</span></div><div class="fact"><strong>50%</strong><span>Bobot PBL mata kuliah</span></div><div class="fact"><strong>100%</strong><span>Total rubrik internal</span></div>
+      </div>
+    </div>
+  </section>
+  <main class="shell">
+    <section id="pengukuran" class="section" aria-labelledby="ukur-title">
+      <div class="overline">01 · Pengamatan dan Pengukuran</div>
+      <h2 class="section-title" id="ukur-title">Pengamatan dan Pengukuran Geometri</h2>
+      <p class="subline">Pilih komponen, putar dan perbesar model, lalu baca ukuran nominal dari geometri STEP sebagai dasar pengerjaan gambar teknik. Mahasiswa membuat pandangan dan gambar potongan sendiri di AutoCAD 2D.</p>
+      <div class="chips" aria-label="Fitur viewer"><span class="chip">Panjang aksial (snap STEP)</span><span class="chip">Diameter &amp; radius</span><span class="chip">Chamfer</span><span class="chip">Visual Style</span><span class="chip">5 model STEP</span></div>
+      <div class="cad-card">
+        <div class="cad-card-head">
+          <div><strong>CAD Viewer STEP — Gambar Mesin</strong><small>Geometri CAD asli · Pembacaan ukuran dalam milimeter</small></div>
+          <div class="cad-tools"><span class="cad-tag">INTERAKTIF</span><a class="btn btn-soft" href="./cad/" target="_blank" rel="noopener noreferrer">Buka layar penuh ↗</a></div>
         </div>
-        <div class="card model-panel">
-          <div class="card-head"><strong>Pilihan komponen</strong><span class="subtle">5 tampilan</span></div>
-          <div class="model-contents">
-            <h3 class="part-name" id="part-name">Wheel Assembly</h3>
-            <p class="part-desc" id="part-desc">Rakitan lengkap yang terdiri dari Base Plate, Bracket, Wheel, dan Axle. Perhatikan posisi, hubungan, dan arah pemasangan tiap komponen.</p>
-            <p class="selector-title">Pilih bagian untuk diamati</p>
-            <div class="part-list" id="part-list" role="group" aria-label="Pilih model">
-              <button class="part-btn" data-model="assembly" aria-pressed="true"><span class="part-num">00</span> Rakitan lengkap</button>
-              <button class="part-btn" data-model="base" aria-pressed="false"><span class="part-num">01</span> Base Plate</button>
-              <button class="part-btn" data-model="bracket" aria-pressed="false"><span class="part-num">02</span> Bracket</button>
-              <button class="part-btn" data-model="wheel" aria-pressed="false"><span class="part-num">03</span> Wheel</button>
-              <button class="part-btn" data-model="axle" aria-pressed="false"><span class="part-num">04</span> Axle</button>
-            </div>
-            <div class="part-spec" id="part-spec" aria-live="polite">
-              <div class="spec-row"><span>Jenis tampilan</span><strong>Rakitan lengkap</strong></div>
-              <div class="spec-row"><span>Komponen</span><strong>Base Plate · Bracket · Wheel · Axle</strong></div>
-            </div>
-          </div>
+        <div class="frame-wrap">
+          <iframe class="cad-frame" title="CAD Viewer STEP untuk pengukuran komponen Wheel Assembly" src="./cad/" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="frame-note"><span>Jika model belum muncul, pastikan folder <b>cad/</b> sudah dipublikasikan di GitHub Pages.</span><a href="./cad/" target="_blank" rel="noopener noreferrer">Buka viewer terpisah ↗</a></div>
+      </div>
+      <div class="howto" aria-label="Panduan singkat penggunaan">
+        <article><span class="step-index">01</span><h3>Amati bentuk dan orientasi</h3><p>Pilih Wheel Assembly atau salah satu komponen. Seret mouse untuk memutar; gunakan scroll untuk memperbesar. <i>Shaded with Edges</i> membantu melihat batas geometri.</p></article>
+        <article><span class="step-index">02</span><h3>Ukur geometri STEP</h3><p>Gunakan Panjang Aksial, Diameter, Radius, atau Chamfer. Untuk panjang aksial pilih dua lingkaran tepi yang sesumbu. Semua ukuran dibaca dalam mm.</p></article>
+        <article><span class="step-index">03</span><h3>Gambar sendiri di AutoCAD</h3><p>Buat pandangan depan, atas, samping, serta potongan yang diperlukan. Viewer membantu pengamatan dan pengukuran, bukan menghasilkan gambar potongan otomatis.</p></article>
+      </div>
+      <div class="resource-panel">
+        <div><h3>Berkas pendukung PBL</h3><p>Unduh model CAD soal dari tautan yang digunakan pada portal sebelumnya. Gunakan sebagai referensi, bukan sebagai gambar kerja yang siap dikumpulkan.</p></div>
+        <div class="resources">
+          <a href="https://drive.google.com/file/d/1hncBJdtidAlFdTe67HHVxsBjFW9cNrcy/view?usp=drive_link" target="_blank" rel="noopener noreferrer">↓ Model rakitan</a>
+          <a href="https://drive.google.com/file/d/1WOuxDttub99lU6tuI5VSK2XFskxFdjeX/view?usp=drive_link" target="_blank" rel="noopener noreferrer">↓ Model terurai</a>
         </div>
       </div>
     </section>
-    <section class="lower" id="instruksi" aria-labelledby="instruction-title">
-      <div class="section-top"><p class="eyebrow">02 · Tahapan Pengerjaan</p><h2 id="instruction-title">Tahapan Pengerjaan</h2><p>Susun satu set gambar kerja A3 sesuai kaidah gambar teknik ISO.</p></div>
-      <div class="steps">
-        <article class="step"><span class="step-num">TAHAP 01</span><h3>Identifikasi komponen</h3><p>Amati rakitan dan keempat komponen. Tentukan bentuk, fungsi, pandangan utama, dan bidang yang memerlukan potongan.</p></article>
-        <article class="step"><span class="step-num">TAHAP 02</span><h3>Gambar detail</h3><p>Gambar proyeksi ortogonal dan potongan yang diperlukan; lengkapi ukuran, toleransi dimensional dan geometrik, serta kekasaran permukaan.</p></article>
-        <article class="step"><span class="step-num">TAHAP 03</span><h3>Gambar rakitan</h3><p>Susun gambar assembly dengan identifikasi bagian, simbol proyeksi, dan etiket pada format A3.</p></article>
+    <section id="tahapan" class="section" aria-labelledby="tahapan-title">
+      <div class="overline">02 · Alur kegiatan</div><h2 class="section-title" id="tahapan-title">Tahapan pengerjaan PBL</h2><p class="subline">Mengikuti tahapan tugas Gambar Mesin 2026/2027. Bobot setiap tahap merupakan kontribusi terhadap nilai akhir mata kuliah.</p>
+      <div class="timeline">
+        <div class="card"><div class="timelabel">Minggu 13 · Tahap 1</div><h3>Analisis assembly</h3><p>Identifikasi komponen dan hubungan antarbagiannya. Tentukan arah pandangan, rencanakan bidang potong, dan siapkan rancangan awal <i>drawing set</i>.</p><span class="weight">Bobot 10%</span></div>
+        <div class="card"><div class="timelabel">Minggu 14 · Tahap 2</div><h3>Detail drawing komponen</h3><p>Buat gambar pandangan dan potongan tiap komponen dengan AutoCAD 2D. Tambahkan ukuran yang cukup, tepat, dan tidak berulang.</p><span class="weight">Bobot 20%</span></div>
+        <div class="card"><div class="timelabel">Minggu 15 · Tahap 3</div><h3>Penyempurnaan drawing set</h3><p>Periksa toleransi, datum, kekasaran permukaan, etiket, jenis garis, serta konsistensi geometri dan ukuran antarlembar.</p><span class="weight">Bobot 20%</span></div>
       </div>
+      <div class="notice"><span class="notice-icon">▣</span><div><strong>Minggu 16 — UAS (10%)</strong><div>Finalisasi, pemeriksaan, dan pengumpulan akhir gambar kerja PBL. Tidak ada objek gambar baru pada tahap UAS.</div></div></div>
     </section>
-    <section class="lower" id="rubrik" aria-labelledby="rubric-title">
-      <div class="section-top"><p class="eyebrow">03 · Rubrik Penilaian</p><h2 id="rubric-title">Rubrik Penilaian</h2><p>Bobot penilaian produk gambar kerja (total 100%).</p></div>
+    <section id="rubrik" class="section" aria-labelledby="rubrik-title">
+      <div class="overline">03 · Evaluasi</div><h2 class="section-title" id="rubrik-title">Rubrik gambar kerja</h2><p class="subline">Pembagian penilaian produk PBL (total 100%). Rubrik internal ini berbeda dari bobot PBL 50% pada nilai mata kuliah.</p>
       <div class="rubric">
-        <div class="measure"><strong>15%</strong><span>Pandangan</span><div class="meter"><div style="--width:75%"></div></div></div>
-        <div class="measure"><strong>15%</strong><span>Potongan</span><div class="meter"><div style="--width:75%"></div></div></div>
-        <div class="measure"><strong>20%</strong><span>Ukuran</span><div class="meter"><div style="--width:100%"></div></div></div>
-        <div class="measure"><strong>10%</strong><span>Toleransi</span><div class="meter"><div style="--width:50%"></div></div></div>
-        <div class="measure"><strong>10%</strong><span>Tanda pengerjaan</span><div class="meter"><div style="--width:50%"></div></div></div>
-        <div class="measure"><strong>15%</strong><span>Etiket</span><div class="meter"><div style="--width:75%"></div></div></div>
-        <div class="measure"><strong>15%</strong><span>Kerapian</span><div class="meter"><div style="--width:75%"></div></div></div>
-      </div>
+        <div class="rubric-item"><strong>15%</strong><span>Pandangan</span><div class="bar"><i style="width:75%"></i></div></div>
+        <div class="rubric-item"><strong>15%</strong><span>Potongan</span><div class="bar"><i style="width:75%"></i></div></div>
+        <div class="rubric-item"><strong>20%</strong><span>Ukuran</span><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="rubric-item"><strong>10%</strong><span>Toleransi</span><div class="bar"><i style="width:50%"></i></div></div>
+        <div class="rubric-item"><strong>10%</strong><span>Tanda pengerjaan</span><div class="bar"><i style="width:50%"></i></div></div>
+        <div class="rubric-item"><strong>15%</strong><span>Etiket</span><div class="bar"><i style="width:75%"></i></div></div>
+        <div class="rubric-item"><strong>15%</strong><span>Kerapian</span><div class="bar"><i style="width:75%"></i></div></div>
+      </div><p class="rubric-foot">Total: <strong>100%</strong>. Penilaian mengikuti ketentuan resmi pengampu mata kuliah.</p>
     </section>
-    <section class="lower" id="pengumpulan" aria-labelledby="deliver-title">
-      <div class="section-top">
-        <p class="eyebrow">04 · Hasil dan Pengumpulan</p>
-        <h2 id="deliver-title">Hasil dan Pengumpulan</h2>
-        <p>Siapkan gambar kerja akhir dan berkas yang harus dikumpulkan sesuai ketentuan PBL.</p>
-      </div>
-      <div class="deliver">
-        <div class="step"><h3>Hasil akhir</h3><ul><li>Gambar detail setiap komponen dan gambar rakitan.</li><li>Pandangan ortogonal dan potongan yang relevan.</li><li>Ukuran, toleransi, kekasaran permukaan, dan etiket.</li></ul></div>
-        <div class="step"><h3>Berkas pengumpulan</h3><ul><li>File gambar kerja CAD dalam format DWG (.dwg).</li><li>PDF gambar teknik ukuran A3.</li><li>Pengumpulan mengikuti petunjuk pengampu.</li></ul></div>
+    <section id="hasil" class="section" aria-labelledby="hasil-title">
+      <div class="overline">04 · Hasil akhir</div><h2 class="section-title" id="hasil-title">Keluaran dan pengumpulan</h2><p class="subline">Hasil tugas berupa set gambar kerja yang menyampaikan bentuk, fitur, dan dimensi komponen secara lengkap.</p>
+      <div class="delivery">
+        <div class="card"><h3>Dokumen yang dikumpulkan</h3><ul><li>Gambar detail Base Plate, Bracket, Wheel, dan Axle.</li><li>Gambar rakitan beserta identifikasi komponen.</li><li>Pandangan ortogonal dan potongan yang relevan.</li><li>Dimensi, toleransi, simbol permukaan, serta etiket.</li><li>File CAD 2D sumber dan PDF gambar kerja ukuran A3 sesuai ketentuan dosen.</li></ul></div>
+        <div class="card"><h3>Petunjuk teknis</h3><p>Gunakan satuan <strong>milimeter</strong>. Pisahkan layer jenis garis, sertakan simbol proyeksi serta skala pada etiket, dan periksa keterbacaan hasil cetak A3. Bandingkan ukuran yang diambil dari viewer dengan kebutuhan gambar kerja.</p></div>
       </div>
     </section>
   </main>
-  <footer><div class="container footer-inner"><span><strong>Gambar Mesin</strong> · Sarjana Terapan Teknik Mesin · Fakultas Vokasi UNY</span><span>Project Based Learning</span></div></footer>
-  <script>
-  (()=>{
-    'use strict';
-    if(new URLSearchParams(location.search).get('embed')==='1')document.documentElement.classList.add('embed');
-    const logo=document.getElementById('uny-logo');
-    const candidates=['Logo UNY.png','logo-uny.png','Logo_UNY.png','logo.png','https://www.uny.ac.id/sites/default/files/2022-09/Logo%20UNY.png'];
-    let logoIndex=0;
-    logo.addEventListener('error',()=>{
-      logoIndex++;
-      if(logoIndex<candidates.length)logo.src=candidates[logoIndex];
-      else {logo.style.display='none';document.getElementById('uny-fallback').style.display='inline'}
-    });
-    const DATA={
-      assembly:{title:'Wheel Assembly',file:'WHEEL ASSEMBLY.glb',desc:'Rakitan lengkap yang terdiri dari Base Plate, Bracket, Wheel, dan Axle. Perhatikan posisi, hubungan, dan arah pemasangan tiap komponen.',rows:[['Jenis tampilan','Rakitan lengkap'],['Komponen','Base Plate · Bracket · Wheel · Axle']],view:{orbit:'314deg 72deg 118%',target:'auto auto auto',fov:'23deg'}},
-      base:{title:'Base Plate',file:'BASE PLATE.glb',desc:'Pelat dasar dengan lubang pengikat dan undakan untuk dudukan bracket.',rows:[['Bahan','Cast iron (C.I.)'],['Panjang × lebar','136 × 78 mm'],['Lubang','4 × Ø10 mm']],view:{orbit:'328deg 70deg 112%',target:'auto auto auto',fov:'20deg'}},
-      bracket:{title:'Bracket',file:'BRACKET.glb',desc:'Penopang roda dengan lubang poros dan bagian penguat. Amati bentuk rib dan lubang pemasangannya.',rows:[['Bahan','Cast iron (C.I.)'],['Lubang poros','Ø20 mm'],['Lubang pemasangan','2 × Ø10 mm']],view:{orbit:'332deg 68deg 118%',target:'auto auto auto',fov:'20deg'}},
-      wheel:{title:'Wheel',file:'WHEEL.glb',desc:'Roda terdiri atas rim, web, hub, dan lubang poros. Bagian dalamnya dapat diamati dengan memutar model.',rows:[['Bahan','Cast iron (C.I.)'],['Diameter luar','Ø100 mm'],['Diameter hub','Ø35 mm'],['Lubang poros','Ø24 mm']],view:{orbit:'320deg 68deg 120%',target:'auto auto auto',fov:'19deg'}},
-      axle:{title:'Axle',file:'AXLE.glb',desc:'Poros bertingkat yang menghubungkan roda dan penopang. Perhatikan diameter dan panjang poros.',rows:[['Bahan','SAE 1112'],['Diameter','Ø24 / Ø20 mm'],['Panjang total','78 mm']],view:{orbit:'312deg 72deg 124%',target:'auto auto auto',fov:'14deg'}}
-    };
-    const v=document.getElementById('viewer');
-    const status=document.getElementById('loading');
-    const title=document.getElementById('part-name');
-    const desc=document.getElementById('part-desc');
-    const spec=document.getElementById('part-spec');
-    const viewerName=document.getElementById('viewer-name');
-    const colors={BASE_PLATE:'#58759c',BRACKET:'#6e9580',WHEEL:'#a25d57',AXLE:'#bc9a57'};
-    let active='assembly'; let mode='grey'; let requestId=0;
-    function showStatus(text,isError=false){status.textContent=text;status.classList.remove('hidden');status.classList.toggle('is-error',isError)}
-    function materialStyle(){
-      const items=v.model?.materials;if(!items)return;
-      for(const mat of items){
-        const pbr=mat.pbrMetallicRoughness;if(!pbr)continue;
-        const part=(mat.name||'').toUpperCase().replaceAll(' ','_');
-        // Inventor-style soft metallic grey; optional muted colors to distinguish parts.
-        const base=mode==='grey'?'#777f89':(colors[part]||'#777f89');
-        pbr.setBaseColorFactor(base);
-        pbr.setMetallicFactor(mode==='grey'?0.24:0.16);
-        pbr.setRoughnessFactor(mode==='grey'?0.7:0.65);
-      }
-    }
-    function setMode(newMode){
-      mode=newMode;
-      for(const id of ['grey','color'])document.getElementById(id).setAttribute('aria-pressed',String(mode===id));
-      materialStyle();
-    }
-    function applyView(item){
-      const view=item.view||{orbit:'314deg 72deg 118%',target:'auto auto auto',fov:'23deg'};
-      v.setAttribute('camera-orbit',view.orbit);
-      v.setAttribute('camera-target',view.target||'auto auto auto');
-      v.setAttribute('field-of-view',view.fov||'23deg');
-      requestAnimationFrame(()=>v.jumpCameraToGoal?.());
-    }
-    function selectPart(key){
-      if(!DATA[key])return;
-      const item=DATA[key];active=key;requestId++;
-      for(const b of document.querySelectorAll('[data-model]'))b.setAttribute('aria-pressed',String(b.dataset.model===key));
-      title.textContent=item.title;desc.textContent=item.desc;viewerName.textContent=item.title;
-      spec.replaceChildren(...item.rows.map(([label,value])=>{const row=document.createElement('div');row.className='spec-row';const s=document.createElement('span');s.textContent=label;const strong=document.createElement('strong');strong.textContent=value;row.append(s,strong);return row}));
-      v.alt='Tampilan tiga dimensi '+item.title;
-      showStatus('Memuat '+item.title+'...');
-      v.src=encodeURI('./'+item.file);
-      applyView(item);
-    }
-    document.getElementById('part-list').addEventListener('click',e=>{const b=e.target.closest('[data-model]');if(b)selectPart(b.dataset.model)});
-    document.getElementById('grey').addEventListener('click',()=>setMode('grey'));
-    document.getElementById('color').addEventListener('click',()=>setMode('color'));
-    const rotate=document.getElementById('rotate');
-    rotate.addEventListener('click',()=>{const activeNow=!v.hasAttribute('auto-rotate');v.toggleAttribute('auto-rotate',activeNow);rotate.setAttribute('aria-pressed',String(activeNow));rotate.textContent=activeNow?'Hentikan putaran':'Putar otomatis'});
-    document.getElementById('reset').addEventListener('click',()=>{applyView(DATA[active])});
-    document.getElementById('fullscreen').addEventListener('click',async()=>{const panel=document.getElementById('viewer-shell');try{if(document.fullscreenElement)await document.exitFullscreen();else await panel.requestFullscreen()}catch(e){showStatus('Layar penuh tidak tersedia dalam mode sematan.',true)}});
-    v.addEventListener('load',()=>{materialStyle();applyView(DATA[active]);status.classList.add('hidden')});
-    v.addEventListener('error',()=>showStatus('Model belum dapat dimuat. Pastikan lima berkas GLB ada bersama index.html di GitHub.',true));
-    v.addEventListener('progress',e=>{if(e.detail?.totalProgress<1)showStatus('Memuat '+DATA[active].title+'...')});
-    applyView(DATA[active]);
-    setTimeout(()=>{if(!customElements.get('model-viewer'))showStatus('Viewer memerlukan koneksi internet agar komponen 3D dapat ditampilkan.',true)},11000);
-  })();
-  </script>
+  <footer class="page-footer"><div class="shell"><div><strong>Gambar Mesin · VTM60202</strong> | D4 Teknik Mesin, Fakultas Vokasi UNY</div><div>Project Based Learning · 2026/2027</div></div></footer>
 </body>
 </html>
