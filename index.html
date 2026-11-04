@@ -7,7 +7,7 @@
 <title>Wheel Assembly | PBL Gambar Mesin</title>
 <meta name="description" content="Project Based Learning Gambar Mesin: pengamatan dan pengukuran model CAD STEP, tahapan pengerjaan, rubrik penilaian, dan pengumpulan gambar kerja AutoCAD 2D.">
 <link rel="canonical" href="https://a-fikrie.github.io/gambar-mesin/">
-<link rel="icon" href="./Logo%20UNY.png">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
 
 <!-- Preview saat link dibagikan (WhatsApp, Telegram, dll.) -->
 <meta property="og:type" content="website">
@@ -22,6 +22,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap">
+
+<!-- CSS utama halaman dipindah ke bawah <link> assets agar tidak dikalahkan bundel -->
+
+<!-- Dua baris di bawah adalah hasil build viewer. Jika viewer di-build ulang, ganti nama file hash-nya sesuai hasil build baru. -->
+<script type="module" crossorigin src="./assets/index-B4k0RgdB.js" onerror="document.documentElement.classList.add('viewer-failed')"></script>
+<link rel="stylesheet" crossorigin href="./assets/index-D7Gd2n6T.css">
 
 <style>
 /* =========================================================
@@ -49,6 +55,7 @@
    ========================================================= */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html,body{max-width:100%;overflow-x:hidden}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--font-body);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
@@ -242,7 +249,10 @@ main{padding:24px 0 72px}
   .titleblock{grid-template-columns:1fr 1fr}
   .titleblock div:nth-child(3){border-left:0}
   .titleblock div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.35)}
-  .rubric-list li{grid-template-columns:110px minmax(0,1fr) 44px;gap:10px}
+  .rubric-list{padding:6px 16px}
+  .rubric-list li{grid-template-columns:minmax(0,1fr) auto;gap:12px}
+  .rubric-list .bar{display:none}
+  .rubric-list .total span:nth-child(2){display:none}
   .uas{grid-template-columns:1fr}
   .uas-badge{justify-self:start}
 }
@@ -268,10 +278,6 @@ main{padding:24px 0 72px}
   .section{margin-top:28px;break-inside:avoid}
 }
 </style>
-
-<!-- Dua baris di bawah adalah hasil build viewer. Jika viewer di-build ulang, ganti nama file hash-nya sesuai hasil build baru. -->
-<script type="module" crossorigin src="./assets/index-B4k0RgdB.js" onerror="document.documentElement.classList.add('viewer-failed')"></script>
-<link rel="stylesheet" crossorigin href="./assets/index-D7Gd2n6T.css">
 
 <!-- ============================================================
      Penyelaras tampilan viewer.
@@ -558,7 +564,7 @@ main{padding:24px 0 72px}
               <div id="overlay" aria-hidden="true"></div>
               <div id="status" class="cad-status" role="status" aria-live="polite">Menyiapkan model STEP…</div>
             </div>
-            <div class="cad-view-hint"><span>Seret: putar · Scroll: zoom · Klik kanan: geser</span></div>
+            <div class="cad-view-hint"><span>Seret: putar · Scroll: zoom · Klik kanan: geser</span><span>Shaded with Edges</span></div>
           </div>
           <aside class="cad-side">
             <label for="model" class="cad-label">Pilih model benda kerja</label>
