@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0b2b4c">
-<title>PBL Gambar Mesin</title>
+<title>Wheel Assembly | PBL Gambar Mesin</title>
 <meta name="description" content="Project Based Learning Gambar Mesin: pengamatan dan pengukuran model CAD STEP, tahapan pengerjaan, rubrik penilaian, dan pengumpulan gambar kerja AutoCAD 2D.">
 <link rel="canonical" href="https://a-fikrie.github.io/gambar-mesin/">
 <link rel="icon" href="./Logo%20UNY.png">
@@ -134,12 +134,15 @@ a{color:inherit;text-decoration:none}
    ========================================================= */
 main{padding:24px 0 72px}
 .section{margin-top:64px;scroll-margin-top:84px}
-.section-title{margin:0 0 10px;font:700 clamp(30px,3.4vw,42px)/1.08 var(--font-display);letter-spacing:-.005em}
-.subline{max-width:64ch;margin:0 0 28px;color:var(--muted);font-size:17px}
+.section-title{margin:0 0 10px;padding:0;text-wrap:balance;font:700 clamp(30px,3.4vw,42px)/1.08 var(--font-display);letter-spacing:-.005em}
+.subline{max-width:none;margin:0 0 28px;color:var(--muted);font-size:17px;text-wrap:pretty}
+/* Di dalam grid, paragraf tetap mengikuti lebar kolomnya */
+.split .subline,.rubric .subline{max-width:46ch}
 
 /* =========================================================
    6. Gambar soal
    ========================================================= */
+.split,.rubric{padding:0;margin:0;border:0}
 .split{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.35fr);gap:40px;align-items:start}
 .parts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 4px;padding:0;list-style:none}
 .parts li{padding:6px 14px;border:1px solid var(--line);border-radius:4px;background:#fff;font-weight:600;font-size:15px}
@@ -149,6 +152,11 @@ main{padding:24px 0 72px}
 .soal figure,.soal-btn{max-width:100%}
 .soal .soal-btn img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
 .soal figcaption{margin-top:8px;color:var(--muted);font-size:14px}
+.soal-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn-outline{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--blue);background:#f4f8fc}
+.lb-foot{margin:10px 2px 2px;color:var(--muted);font-size:14px;text-align:center}
+.lb-foot a{color:var(--blue);font-weight:600;text-decoration:underline}
 .lightbox{padding:0;border:0;background:transparent;max-width:96vw;max-height:96vh;overflow:visible}
 .lightbox::backdrop{background:rgba(7,31,56,.82)}
 .lb-body{position:relative;background:#fff;padding:10px;border-radius:6px}
@@ -517,25 +525,20 @@ main{padding:24px 0 72px}
 
   <!-- ========== SOAL ========== -->
   <section id="soal" class="section" aria-labelledby="soal-title">
-    <div class="split">
-      <div>
-        <h2 class="section-title" id="soal-title">Gambar soal</h2>
-        <p class="subline">Acuan proyek. Dari rakitan ini kamu membuat gambar detail untuk empat komponen, ditambah gambar rakitannya.</p>
-        <ul class="parts" aria-label="Komponen yang digambar">
-          <li>Base Plate</li><li>Bracket</li><li>Wheel</li><li>Axle</li>
-        </ul>
-      </div>
-      <figure class="soal">
-        <button type="button" class="soal-btn" id="soalOpen" aria-label="Perbesar gambar soal PBL">
-          <img src="./PBL_Gambar_Soal.jpg" alt="Gambar soal PBL Wheel Assembly" loading="lazy" decoding="async">
-        </button>
-        <figcaption>Klik gambar untuk memperbesar.</figcaption>
-      </figure>
+    <h2 class="section-title" id="soal-title">Gambar soal</h2>
+    <p class="subline">Acuan proyek. Dari rakitan ini kamu membuat gambar detail untuk empat komponen, ditambah gambar rakitannya. Semua ukuran dalam milimeter.</p>
+    <ul class="parts" aria-label="Komponen yang digambar">
+      <li>Base Plate</li><li>Bracket</li><li>Wheel</li><li>Axle</li>
+    </ul>
+    <div class="soal-actions">
+      <button type="button" class="btn btn-primary" id="soalOpen" data-src="./PBL_Gambar_Soal.jpg">Lihat gambar soal</button>
+      <a class="btn btn-outline" href="./PBL_Gambar_Soal.jpg" download>Unduh gambar</a>
     </div>
     <dialog class="lightbox" id="lightbox" aria-label="Gambar soal diperbesar">
       <div class="lb-body">
         <form method="dialog"><button class="lb-close" aria-label="Tutup">×</button></form>
         <img alt="Gambar soal PBL Wheel Assembly, ukuran penuh">
+        <p class="lb-foot">Perlu lebih besar? <a href="./PBL_Gambar_Soal.jpg" target="_blank" rel="noopener">Buka di tab baru</a> atau <a href="./PBL_Gambar_Soal.jpg" download>unduh</a>.</p>
       </div>
     </dialog>
   </section>
@@ -756,16 +759,18 @@ main{padding:24px 0 72px}
   var open=document.getElementById('soalOpen');
   var dlg=document.getElementById('lightbox');
   if(open && dlg){
-    var thumb=open.querySelector('img');
+    var src=open.getAttribute('data-src');
     if(typeof dlg.showModal==='function'){
       var big=dlg.querySelector('img');
       open.addEventListener('click',function(){
-        if(!big.getAttribute('src')) big.setAttribute('src',thumb.getAttribute('src'));
+        /* gambar baru diunduh saat tombol ditekan */
+        if(!big.getAttribute('src')) big.setAttribute('src',src);
         dlg.showModal();
       });
       dlg.addEventListener('click',function(e){ if(e.target===dlg) dlg.close(); });
     }else{
-      open.addEventListener('click',function(){ window.open(thumb.src,'_blank','noopener'); });
+      /* browser lama tanpa elemen dialog: buka di tab baru */
+      open.addEventListener('click',function(){ window.open(src,'_blank','noopener'); });
     }
   }
 
